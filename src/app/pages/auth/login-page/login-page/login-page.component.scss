@@ -1,45 +1,41 @@
 .left-side {
-    height: 100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .etiya-logo-area {
+    position: relative;
     width: 100%;
-    // background-color: blue;
-    align-items: center;
-    justify-content: center;
+    height: 175%;
+    //background-color: green;
+    border-right: 2px solid #f58220;
     display: flex;
-    padding: 0;
-  
-    .etiya-logo-area {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      //background-color: green;
-      border-right: 1px solid #f58220;
+
+    .etiya-logo {
       display: flex;
-  
-      .etiya-logo {
-        display: flex;
-        padding: 0;
-        margin: auto;
-        //background-color: yellow;
-        max-width: 100%;
-        height: auto;
-      }
+      margin: auto;
+      //background-color: yellow;
+      max-width: 100%;
+      height: auto;
     }
   }
-  
-  .right-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 1);
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 38.73px;
-    text-align: left;
-    form {
-      width: 100%;
-    }
-    button {
-    }
+}
+@media only screen and (max-width: 800px) {
+  .left-side .etiya-logo-area {
+    border-right: none;
   }
-  
+}
+.right-side {
+  margin: auto;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38.73px;
+}

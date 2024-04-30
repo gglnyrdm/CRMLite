@@ -1,0 +1,29 @@
+input {
+  border: 5px solid rgba(245, 130, 32, 0.6);
+  border-radius: 10px;
+  gap: 0px;
+  opacity: 0px;
+}
+.form-group input {
+  width: 400px;
+  height: 60px;
+}
+.form-group {
+  padding: 20px;
+}
+.form-check {
+  margin: 20px !important;
+}
+button {
+  background-color: rgba(224, 224, 224, 1);
+  border-radius: 20px;
+  border: none;
+  width: 196px;
+  height: 60px;
+  border-radius: 30px;
+  opacity: 0px;
+  font-weight: 700;
+  line-height: 38.73px;
+  color: rgba(255, 255, 255, 1);
+  margin: 10px;
+}
