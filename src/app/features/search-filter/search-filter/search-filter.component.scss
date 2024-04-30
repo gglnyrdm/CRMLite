@@ -1,0 +1,45 @@
+.form-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #242441;
+  // background-color: red;
+  border-radius: 1.625rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+p {
+  position: relative;
+  margin-top: 1rem;
+  font-family: 'Inter';
+  font-weight: 550;
+  font-size: 1.2rem;
+  line-height: 1.51rem;
+  color: #3F3F77;
+  margin-bottom: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+input {
+  width: 16rem;
+  border: 2px solid #F5822099;
+  border-radius: 0.6rem;
+}
+button {
+  color: white;
+  background-color: #E0E0E0;
+  width: 6.25rem;
+  height: 1.9rem;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
