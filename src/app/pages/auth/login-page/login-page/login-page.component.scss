@@ -1,0 +1,37 @@
+.etiya-header-container {
+    width: 100%;
+    height: 100%;
+    //background-color: red;
+    display: flex;
+
+    .left-side{
+        position: relative;
+        height: 100%;
+        width: 45%;
+        left: 0%;
+       // background-color: blue;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding: 0;
+
+        .etiya-logo-area {
+            position: relative;
+            width: 100%;
+            height: 80%;
+            //background-color: green;
+            border-right: 1px solid #F58220;
+            display: flex;
+         
+            .etiya-logo {
+                display: flex;
+                padding: 0;
+                margin: auto;
+                //background-color: yellow;
+                max-width: 39rem;
+                max-height: 19rem;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,90 @@
+header {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 8.75rem;
+  background: linear-gradient(90.11deg, #242441 43.26%, #2A2A4B 72.75%, #505090 107.63%, #363661 107.63%);
+  display: flex;
+}
+
+.left-side {
+position: relative;
+top: 1rem;
+width: 80%;
+height: 80%;
+border-right:2px solid #F5822099;
+// background-color: red;
+margin: 0;
+}
+
+.etiya-logo-area{
+  position: relative;
+  top: 0.6rem;
+  max-width: 25.5rem;
+  // background-color: blue;
+  padding: 0.1rem;
+  img{
+    display: flex;
+    align-items: center;
+    max-width: 25rem;
+    max-height: 5.75rem;
+    // background-color: yellow;
+    margin: 0;
+    opacity: 0.9;
+  }
+  img:hover{
+    display: flex;
+    align-items: center;
+    max-width: 25rem;
+    max-height: 5.75rem;
+    // background-color: yellow;
+    margin: 0;
+    opacity: 1;
+  }
+}
+
+.user-information-side {
+  position: relative;
+  // background-color: aqua;
+  top: 1.5rem;
+  width: 20%;
+  height: 70%;
+  display: flex;
+  img{
+    position: relative;
+    top:1rem;
+    max-width: 2.8rem;
+    max-height:3.87rem;
+    margin-left: 1rem;
+    opacity: 0.9;
+    // background-color: purple;
+  }
+  img:hover {
+    position: relative;
+    top:1rem;
+    max-width: 2.8rem;
+    max-height:3.87rem;
+    margin-left: 1rem;
+    opacity: 1;
+  }
+}
+
+.user-name {
+  position: relative;
+  width: 10rem;
+  height: 4.8rem;
+  // background-color: red;
+
+  p{
+    position: relative;
+    display: inline-block;
+    // background-color: orange;
+    top:60%;
+    left: 9%;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: #FFFFFF;
+    line-height: 2.1rem;
+  }
+}
