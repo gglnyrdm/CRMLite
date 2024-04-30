@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SingleFocusLayoutComponent } from '../shared/components/single-focus-layout/single-focus-layout/single-focus-layout.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,SingleFocusLayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
