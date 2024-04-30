@@ -1,3 +1,48 @@
-:host {
-  display: block;
+nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  // min-height: 39.18rem;
+  width: 5.75rem;
+  // background-color: red;
+  padding-top: 3rem;
+  left: 5%;
+  margin: 0;
+}
+
+p {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter';
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.81rem;
+}
+
+#b2c-icon {
+  margin-bottom: 0.8rem;
+}
+#menu-icon {
+  margin-bottom: 2rem;
+}
+
+#right-hand-icon{
+margin-bottom: 2rem;
+}
+
+#log-out-icon {
+  margin-bottom: 3rem;
+}
+img {
+  opacity: 0.85;
+  max-width: 5rem;
+  max-height: 4.3rem;
+}
+
+img:hover {
+  cursor: pointer;
+  opacity: 1;
+  max-width: 5rem;
+  max-height: 4.3rem;
 }
