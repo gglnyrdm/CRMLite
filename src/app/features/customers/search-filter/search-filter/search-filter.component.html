@@ -1,0 +1,21 @@
+<div class="form-area">
+    <form [formGroup]="form" (submit)="onSubmitForm()">
+        <p>ID Number</p>
+        <input type="text" appOnlyNumberInput formControlName="idNumber" >
+        <p>Customer ID</p>
+        <input type="text" appOnlyNumberInput formControlName="customerId">
+        <p>Account Number</p>
+        <input type="text"  appOnlyNumberInput formControlName="accountNumber">
+        <p>GSM Number</p>
+        <input type="text" appOnlyNumberInput formControlName="gsmNumber">
+        <p>First Name</p>
+        <input type="text"  formControlName="firstName">
+        <p>Last Name</p>
+        <input type="text"  formControlName="lastName">
+        <p>Order Number</p>
+        <input type="text" appOnlyNumberInput formControlName="orderNumber">
+        <button type="reset">CLEAR</button>
+        <button type="submit">SEARCH</button>
+    </form>
+</div> 
+

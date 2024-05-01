@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SearchFilterComponent } from '../../../features/search-filter/search-filter/search-filter.component';
-import { SearchResultsComponent } from '../../../features/search-result/search-results/search-results.component';
+import { SearchFilterComponent } from '../../../features/customers/search-filter/search-filter/search-filter.component';
+import { SearchResultsComponent } from '../../../features/customers/search-result/search-results/search-results.component';
 
 @Component({
   selector: 'app-search-customer',
   standalone: true,
   imports: [
     CommonModule,
-    SearchFilterComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    SearchFilterComponent
   ],
   templateUrl: './search-customer.component.html',
   styleUrl: './search-customer.component.scss',
