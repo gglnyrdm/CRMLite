@@ -14,8 +14,8 @@
         <input type="text" appOnlyLetterDirective formControlName="lastName">
         <p>Order Number</p>
         <input type="text" appOnlyNumberInput formControlName="orderNumber">
-        <button type="reset">CLEAR</button>
-        <button type="submit">SEARCH</button>
+        <button type="reset" [disabled]="isDisabledClearButton" [ngStyle]="{'background-color': isDisabledSearchButton ? '#E0E0E0' : '#242441'}">CLEAR</button>
+        <button type="submit" [disabled]="isDisabledSearchButton" [ngStyle]="{'background-color': isDisabledSearchButton ? '#E0E0E0' : '#F5822099'}" >SEARCH</button>
     </form>
 </div> 
 
