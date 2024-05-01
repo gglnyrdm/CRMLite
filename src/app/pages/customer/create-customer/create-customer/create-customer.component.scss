@@ -1,0 +1,26 @@
+.title {
+  position: relative;
+  width: 12rem;
+  left: 2%;
+  top:2%;
+  margin-top: 1rem;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 1.625rem;
+  line-height: 1.51rem ;
+  // background-color: red;
+}
+
+.create-customer-content {
+  position: relative;
+  width: 98%;
+  height: 90vh;
+  // background-color: red;
+  margin-left: 1rem;
+  margin-right: 0;
+  border:2px solid black;
+  display: flex;
+  border-radius:1rem;
+  justify-content: center;
+  align-items: center;
+}
