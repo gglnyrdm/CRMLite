@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { OnlyNumberInputDirective } from '../../../../core/directives/only-number-input-directive';
+import { OnlyNumberInputDirective } from '../../../../core/directives/only-number-input.directive';
 import { log } from 'console';
+import { OnlyLetterDirective } from '../../../../core/directives/only-letter.directive';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { log } from 'console';
     CommonModule,
     ReactiveFormsModule,
     OnlyNumberInputDirective,
+    OnlyLetterDirective
   ],
   templateUrl: './search-filter.component.html',
   styleUrl: './search-filter.component.scss',
