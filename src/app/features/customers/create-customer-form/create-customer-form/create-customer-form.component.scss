@@ -1,14 +1,24 @@
+::-webkit-datetime-edit { padding: 1em; }
+::-webkit-datetime-edit-fields-wrapper { background: silver; }
+::-webkit-datetime-edit-text { color: #3F3F77; padding: 0 0.3em; }
+::-webkit-datetime-edit-month-field { color: blue; visibility: hidden; }
+::-webkit-datetime-edit-day-field { color: green; visibility: hidden;}
+::-webkit-datetime-edit-year-field { color: purple; visibility: hidden;}
+::-webkit-inner-spin-button { display: none; }
+::-webkit-calendar-picker-indicator { background: orange; }
+
 span {
   display: inline-block;
   font-family: 'Inter';
   font-weight: 500;
-  font-size: 1.625rem;
+  font-size: 1.2rem;
   line-height: 1.51rem;
+  color: #3F3F77;
 }
 
 input {
-  width: 15rem;
-  height: 2.5rem;
+  width: 14rem;
+  height: 2rem;
   border: 2px solid #F5822099;
   border-radius: 0.6rem;
   float: right;
@@ -21,6 +31,17 @@ input {
   width: 30rem;
   // margin-right: 4rem;
   // margin-left: 4rem;
+}
+
+.form-select {
+  width: 14rem;
+  height: 2rem;
+  border: 2px solid #F5822099;
+  border-radius: 0.6rem;
+  float: right;
+  padding: 0 0 0 0.5rem;
+  color: #3F3F77;
+  box-shadow: none;
 }
 
 .left-side {

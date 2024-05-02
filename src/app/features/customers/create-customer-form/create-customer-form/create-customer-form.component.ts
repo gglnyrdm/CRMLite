@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-create-customer-form',
@@ -11,4 +11,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './create-customer-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CreateCustomerFormComponent { }
+export class CreateCustomerFormComponent {
+  
+}

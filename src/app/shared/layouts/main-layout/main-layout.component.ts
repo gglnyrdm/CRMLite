@@ -3,6 +3,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header/header.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { CreateCustomerComponent } from '../../../pages/customer/create-customer/create-customer/create-customer.component';
+import { SearchCustomerComponent } from '../../../pages/customer/search-customer/search-customer.component';
 
 @Component({
   selector: 'app-main-layout',
@@ -11,7 +13,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     HeaderComponent,
     NavbarComponent,
-    RouterModule
+    RouterModule,
+    CreateCustomerComponent,
+    SearchCustomerComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss',
