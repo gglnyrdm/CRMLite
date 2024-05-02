@@ -1,13 +1,33 @@
+
+
+@media only screen and (max-width:767.5px) {
+  
+  .test{
+    display: flex;
+    flex-direction: row;
+    #b2c-icon {
+      position: relative;
+      display: flex;
+      bottom: 1rem;
+    }
+    img {
+      margin-right: 4.5rem;
+    }
+    p{
+      display: none;
+    }
+  }
+ }
 nav {
-  position: fixed;
+  position: relative;
+  right: 3rem;
   display: flex;
   flex-direction: column;
-  // min-height: 39.18rem;
   width: 5.75rem;
-  // background-color: red;
   padding-top: 3rem;
-  left: 5%;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 p {
@@ -47,3 +67,4 @@ img:hover {
   max-width: 4.4rem;
   max-height: 3.5rem;
 }
+

@@ -87,3 +87,15 @@ margin: 0;
     line-height: 2.1rem;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  
+ 
+  .left-side {
+      left: 10%;
+      border:none
+  }
+  .user-information-side {
+    visibility: hidden;
+  }
+}
