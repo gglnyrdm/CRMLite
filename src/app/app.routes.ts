@@ -4,6 +4,7 @@ import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.co
 import { SearchCustomerComponent } from './pages/customer/search-customer/search-customer.component';
 import { CreateCustomerComponent } from './pages/customer/create-customer/create-customer/create-customer.component';
 import { ContactCustomerComponent } from './pages/customer/contact-customer/contact-customer.component';
+import { CustomerProfileComponent } from './pages/customer/customer-profile/customer-profile.component';
 
 export const routes: Routes = [
 
@@ -26,7 +27,19 @@ export const routes: Routes = [
                 pathMatch:'full',
                 component:SearchCustomerComponent 
             },
+         
             
+        ]
+    },
+    {
+        path: 'customerprofile',
+        component: MainLayoutComponent,
+        children: [
+            {
+                path:'',
+                pathMatch: 'full',
+                component: CustomerProfileComponent
+            }
         ]
     },
     {
@@ -36,6 +49,6 @@ export const routes: Routes = [
     {
         path:'contactcustomer',
         component:ContactCustomerComponent
-    }
-
+    },
+    
 ];

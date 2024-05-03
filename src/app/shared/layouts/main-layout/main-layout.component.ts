@@ -5,6 +5,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { CreateCustomerComponent } from '../../../pages/customer/create-customer/create-customer/create-customer.component';
 import { SearchCustomerComponent } from '../../../pages/customer/search-customer/search-customer.component';
+import { CustomerProfileComponent } from '../../../pages/customer/customer-profile/customer-profile.component';
 
 @Component({
   selector: 'app-main-layout',
@@ -15,7 +16,8 @@ import { SearchCustomerComponent } from '../../../pages/customer/search-customer
     NavbarComponent,
     RouterModule,
     CreateCustomerComponent,
-    SearchCustomerComponent
+    SearchCustomerComponent,
+    CustomerProfileComponent,
   ],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss',
