@@ -57,7 +57,6 @@ export class SearchFilterComponent {
   constructor(private fb:FormBuilder){}
 
 onSubmitForm() {
-  debugger;
   if(this.form.invalid)
     {
       
