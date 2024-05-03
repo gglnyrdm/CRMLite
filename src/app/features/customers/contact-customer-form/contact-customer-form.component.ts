@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { OnlyNumberInputDirective } from '../../../core/directives/only-number-input.directive';
-import { OnlyLetterDirective } from '../../../core/directives/only-letter.directive';
 
 @Component({
   selector: 'app-contact-customer-form',
@@ -11,10 +10,18 @@ import { OnlyLetterDirective } from '../../../core/directives/only-letter.direct
     CommonModule, 
     ReactiveFormsModule,
     OnlyNumberInputDirective,
-    OnlyLetterDirective],
+    ],
   templateUrl: './contact-customer-form.component.html',
-  styleUrl: './contact-customer-form.component.scss'
+  styleUrl: './contact-customer-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactCustomerFormComponent {
-
+  form:FormGroup = this.fb.group({
+    email: new FormControl(''),
+    mobilePhone: new FormControl('+90'),
+    homePhone: new FormControl('+90'),
+    fax: new FormControl('+90'),
+  });
+  constructor(private fb:FormBuilder){}
+  
 }

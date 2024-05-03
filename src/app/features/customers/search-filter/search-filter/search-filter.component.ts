@@ -28,7 +28,7 @@ export class SearchFilterComponent {
 
 
   form:FormGroup = this.fb.group({
-    idNumber: new FormControl(''),
+    idNumber: new FormControl('', [Validators.required]),
     customerId: new FormControl(''),
     accountNumber: new FormControl(''),
     gsmNumber: new FormControl(''),
