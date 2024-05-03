@@ -2,11 +2,15 @@
 <form>
     <div class="form-group">
         <label for="username">Username*</label>
-        <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" [(ngModel)]="username" (ngModelChange)="checkInputs()" (keydown)="checkCapsLock($event)">
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username"
+            [(ngModel)]="username" (ngModelChange)="checkInputs()" (keydown)="checkCapsLock($event)"
+            #usernameInput="ngModel" minlength="5" maxlength="20" required>
     </div>
     <div class="form-group password-input">
         <label for="password">Password*</label>
-        <input type="{{showPassword ? 'text' : 'password'}}" class="form-control" id="password" name="password" placeholder="Enter Password"  [(ngModel)]="password" (ngModelChange)="checkInputs()" (keydown)="checkCapsLock($event)">
+        <input type="{{showPassword ? 'text' : 'password'}}" class="form-control" id="password" name="password"
+            placeholder="Enter Password" [(ngModel)]="password" (ngModelChange)="checkInputs()"
+            (keydown)="checkCapsLock($event)" #passwordInput="ngModel" minlength="8" maxlength="20" required>
         <span (click)="togglePasswordVisibility()"><i class="far"
                 [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i></span>
     </div>
