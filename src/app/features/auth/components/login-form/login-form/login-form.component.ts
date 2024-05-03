@@ -17,18 +17,25 @@ export class LoginFormComponent {
   showPassword: boolean = false;
   enableSubmit: boolean = false;
   submitButtonClass: string = '';
+  capsLockWarning: boolean = false;
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
-  
+
   checkInputs(): void {
     if (this.username.trim() !== '' && this.password.trim() !== '') {
       this.enableSubmit = true;
-      this.submitButtonClass = 'active'; 
+      this.submitButtonClass = 'active';
     } else {
       this.enableSubmit = false;
-      this.submitButtonClass = ''; 
+      this.submitButtonClass = '';
     }
+    this.checkCapsLock(new KeyboardEvent('keydown')); // Klavye olayını tetikleyerek caps lock durumunu kontrol et
   }
+
+  checkCapsLock(event: KeyboardEvent) {
+    this.capsLockWarning = event.getModifierState && event.getModifierState('CapsLock');
+  }
+
 }

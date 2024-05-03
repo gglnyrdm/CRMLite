@@ -2,13 +2,16 @@
 <form>
     <div class="form-group">
         <label for="username">Username*</label>
-        <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" [(ngModel)]="username" (ngModelChange)="checkInputs()">
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" [(ngModel)]="username" (ngModelChange)="checkInputs()" (keydown)="checkCapsLock($event)">
     </div>
     <div class="form-group password-input">
         <label for="password">Password*</label>
-        <input type="{{showPassword ? 'text' : 'password'}}" class="form-control" id="password" name="password" placeholder="Enter Password"  [(ngModel)]="password" (ngModelChange)="checkInputs()">
+        <input type="{{showPassword ? 'text' : 'password'}}" class="form-control" id="password" name="password" placeholder="Enter Password"  [(ngModel)]="password" (ngModelChange)="checkInputs()" (keydown)="checkCapsLock($event)">
         <span (click)="togglePasswordVisibility()"><i class="far"
                 [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i></span>
+    </div>
+    <div *ngIf="capsLockWarning" class="caps-lock-warning" role="alert">
+        Capslock is on.
     </div>
     <div class="form-check">
         <input type="checkbox" class="form-check-input" id="checkbox">
