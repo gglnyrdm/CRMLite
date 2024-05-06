@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { OnlyNumberInputDirective } from '../../../core/directives/only-number-input.directive';
+import { OnlyNumberInputDirective } from '../../../../core/directives/only-number-input.directive';
 
 @Component({
   selector: 'app-contact-customer-form',

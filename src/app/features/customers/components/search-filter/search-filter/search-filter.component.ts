@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { OnlyNumberInputDirective } from '../../../../core/directives/only-number-input.directive';
 import { log } from 'console';
-import { OnlyLetterDirective } from '../../../../core/directives/only-letter.directive';
+import { OnlyNumberInputDirective } from '../../../../../core/directives/only-number-input.directive';
+import { OnlyLetterDirective } from '../../../../../core/directives/only-letter.directive';
 
 
 @Component({
