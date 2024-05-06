@@ -5,6 +5,10 @@ import { SearchCustomerComponent } from './pages/customer/search-customer/search
 import { CreateCustomerComponent } from './pages/customer/create-customer/create-customer/create-customer.component';
 import { ContactCustomerComponent } from './pages/customer/contact-customer/contact-customer.component';
 import { CustomerProfileComponent } from './pages/customer/customer-profile/customer-profile.component';
+import { CustomerInfoComponent } from './pages/customer/customer-info/customer-info.component';
+import { CustomerAccountsComponent } from './pages/customer/customer-accounts/customer-accounts.component';
+import { CustomerAddressComponent } from './pages/customer/customer-address/customer-address.component';
+import { CustomerContactMediumComponent } from './pages/customer/customer-contact-medium/customer-contact-medium.component';
 
 export const routes: Routes = [
 
@@ -32,13 +36,31 @@ export const routes: Routes = [
         ]
     },
     {
-        path: 'customerprofile',
+        path: '',
         component: MainLayoutComponent,
         children: [
             {
                 path:'',
-                pathMatch: 'full',
-                component: CustomerProfileComponent
+                component: CustomerProfileComponent,
+                children: [
+                    {
+                        path: 'customerinfo',
+                        component: CustomerInfoComponent,
+                    },
+                    {
+                        path: 'customeraddress',
+                        component: CustomerAddressComponent,
+                    },
+                    {
+                        path: 'customeraccounts',
+                        component: CustomerAccountsComponent,
+                    }, 
+                    {
+                        path: 'customercontactmedium',
+                        component: CustomerContactMediumComponent,
+                    },
+                   
+                ],
             }
         ]
     },
