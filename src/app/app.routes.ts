@@ -10,6 +10,8 @@ import { CustomerAccountsComponent } from './pages/customer/customer-accounts/cu
 import { CustomerAddressComponent } from './pages/customer/customer-address/customer-address.component';
 import { CustomerContactMediumComponent } from './pages/customer/customer-contact-medium/customer-contact-medium.component';
 import { CustomerInfoFormComponent } from './features/customers/components/customer-info-form/customer-info-form.component';
+import { CustomerAddressInfoComponent } from './features/customers/components/customer-adress-info/customer-address-info/customer-address-info.component';
+import { CreateCustomerFormComponent } from './features/customers/components/create-customer-form/create-customer-form/create-customer-form.component';
 
 export const routes: Routes = [
 
@@ -70,7 +72,18 @@ export const routes: Routes = [
     },
     {
         path:'createcustomer',
-        component:CreateCustomerComponent
+        component:CreateCustomerComponent,
+        children: [
+            {
+                path: '',
+                component: CreateCustomerFormComponent,
+            },
+            {
+                path: 'addressinfo',
+                component: CustomerAddressInfoComponent,
+            },
+
+        ]
     },
     {
         path:'contactcustomer',
