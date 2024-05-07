@@ -7,9 +7,9 @@
                             <span>First Name*</span>
                             <input type="text" formControlName="firstName">
                         </div>
-                        <div class="input-area">
+                        <div class="input-area" >
                             <span>Last Name*</span>
-                            <input type="text">
+                            <input type="text" formControlName="lastName">
                         </div>
                         <div class="input-area">
                             <span>Gender*</span>
@@ -44,7 +44,7 @@
                             <span>Nationality ID</span>
                         <input type="text" formControlName="nationalityId">
                         </div>
-                        <button class="next-button" type="submit">Next</button>
+                        <button class="next-button" type="submit" [disabled]="!form.valid"  [ngStyle]="{'background-color': !form.valid ? '#E0E0E0' : '#F5822099'}">Next</button>
                 </div>
             </div>
         </div>

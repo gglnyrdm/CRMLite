@@ -18,20 +18,35 @@ import { CustomerApiService } from '../../../services/customerApi.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateCustomerFormComponent {
+  isFormValid: boolean = false;
+
 form:FormGroup = this.fb.group({
-  firstName: new FormControl('asdasd'),
-  lastName: new FormControl('asdadas',),
-  gender: new FormControl('true'),
+  firstName: new FormControl('asdasd',[Validators.required]),
+  lastName: new FormControl('asdadas',[Validators.required]),
+  gender: new FormControl('true',[Validators.required]),
   motherName: new FormControl('asdada'),
   middleName: new FormControl('asdasdasd'),
-  birthDate: new FormControl('2024-05-06T18:46:40.165Z'),
+  birthDate: new FormControl('',[Validators.required]),
   fatherName: new FormControl('asdasda'),
-  nationalityId: new FormControl('1234')
+  nationalityId: new FormControl('1234', [Validators.required])
 })
 
-constructor(private fb:FormBuilder,private customerApiService:CustomerApiService){}
+constructor(private fb:FormBuilder,private customerApiService:CustomerApiService){
+
+  this.form.valueChanges.subscribe(() => {
+    this.isFormValid = this.form.valid;
+  });
+}
+
+
+
+
+
+
+
 
 onSubmitForm() {
+  console.log("butona basıldı")
   this.form.valid ? this.createCustomer() : console.error('Form is invalid', this.form.value);
 }
 
