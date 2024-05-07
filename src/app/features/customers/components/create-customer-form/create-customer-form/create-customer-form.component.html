@@ -5,11 +5,11 @@
                 <div class="left-side">
                         <div class="input-area">
                             <span>First Name*</span>
-                            <input type="text" formControlName="firstName">
+                            <input appOnlyLetterDirective type="text" formControlName="firstName">
                         </div>
                         <div class="input-area" >
                             <span>Last Name*</span>
-                            <input type="text" formControlName="lastName">
+                            <input appOnlyLetterDirective type="text" formControlName="lastName">
                         </div>
                         <div class="input-area">
                             <span>Gender*</span>
@@ -21,7 +21,7 @@
                         </div>
                         <div class="input-area">
                             <span>Mother Name*</span>
-                            <input type="text" formControlName="motherName">
+                            <input appOnlyLetterDirective type="text" formControlName="motherName">
                         </div>
                         <button class="cancel-button" routerLink="/searchcustomer" type="submit">Cancel</button>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="right-side">
                         <div class="input-area">
                             <span>Middle Name</span>
-                        <input type="text" formControlName="middleName">
+                        <input appOnlyLetterDirective type="text" formControlName="middleName">
                         </div>
                         <div class="input-area">
                             <span>Birth Date</span>
@@ -38,13 +38,19 @@
                         </div>
                         <div class="input-area">
                             <span>Father Name</span>
-                        <input type="text" formControlName="fatherName">
+                        <input appOnlyLetterDirective type="text" formControlName="fatherName">
                         </div>
                         <div class="input-area">
                             <span>Nationality ID</span>
-                        <input type="text" formControlName="nationalityId">
+                        <input name="" appOnlyNumberInput maxlength="11" type="text" formControlName="nationalityId">
                         </div>
-                        <button class="next-button" type="submit" [disabled]="!form.valid"  [ngStyle]="{'background-color': !form.valid ? '#E0E0E0' : '#F5822099'}">Next</button>
+                        <div *ngIf="showNationalityIdWarning">
+                            You have entered an invalid Nationality ID. Please check.
+                          </div>
+                          <div *ngIf="showInvalidFormWarning">
+                            You have entered an invalid form of data. Please check.
+                          </div>
+                        <button class="next-button" type="submit"  [ngStyle]="{'background-color': !form.valid ? '#E0E0E0' : '#F5822099'}">Next</button>
                 
                         {{formattedDate}}
                     </div>

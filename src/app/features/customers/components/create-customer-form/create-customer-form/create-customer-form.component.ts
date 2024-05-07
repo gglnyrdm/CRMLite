@@ -4,6 +4,9 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { RouterModule } from '@angular/router';
 import { CreateCustomerRequest } from '../../../models/createModelRequest';
 import { CustomerApiService } from '../../../services/customerApi.service';
+import { OnlyLetterDirective } from '../../../../../core/directives/only-letter.directive';
+import { OnlyNumberInputDirective } from '../../../../../core/directives/only-number-input.directive';
+import { log } from 'console';
 
 @Component({
   selector: 'app-create-customer-form',
@@ -11,7 +14,9 @@ import { CustomerApiService } from '../../../services/customerApi.service';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OnlyLetterDirective,
+    OnlyNumberInputDirective
   ],
   templateUrl: './create-customer-form.component.html',
   styleUrl: './create-customer-form.component.scss',
@@ -25,6 +30,9 @@ export class CreateCustomerFormComponent {
   eighteenYearsAgo = new Date(this.currentDate.getFullYear() - 18, this.currentDate.getMonth(), this.currentDate.getDate());
   formattedDate = `${this.eighteenYearsAgo.getFullYear()}-${String(this.eighteenYearsAgo.getMonth() + 1).padStart(2, '0')}-${String(this.eighteenYearsAgo.getDate()).padStart(2, '0')}`;
   
+  showNationalityIdWarning: boolean = false;
+  showInvalidFormWarning:boolean = false;
+
   form:FormGroup = this.fb.group({
   firstName: new FormControl('asdasd',[Validators.required]),
   lastName: new FormControl('asdadas',[Validators.required]),
@@ -33,7 +41,7 @@ export class CreateCustomerFormComponent {
   middleName: new FormControl('asdasdasd'),
   birthDate: new FormControl('',[Validators.required]),
   fatherName: new FormControl('asdasda'),
-  nationalityId: new FormControl('1234', [Validators.required])
+  nationalityId: new FormControl('1234', [Validators.required, Validators.maxLength(11)])
 })
 
 constructor(private fb:FormBuilder,private customerApiService:CustomerApiService){
@@ -43,13 +51,22 @@ constructor(private fb:FormBuilder,private customerApiService:CustomerApiService
   });
 }
 
-
-
 onSubmitForm() {
-  console.log("butona basıldı")
-  this.form.valid ? this.createCustomer() : console.error('Form is invalid', this.form.value);
-}
+  if (this.form.valid) {
+    if (this.form.controls['nationalityId'].value.length < 11 ) {
+      this.showNationalityIdWarning = true;
+      this.showInvalidFormWarning = false;
 
+    } else {
+      this.showNationalityIdWarning = false;
+      this.createCustomer();
+      console.log("Başarılı")
+    }
+  } else {
+    this.showInvalidFormWarning = true;
+    console.error('Form is invalid', this.form.value);
+  }
+}
 
 createCustomer() {
   const createCustomerRequest : CreateCustomerRequest={
