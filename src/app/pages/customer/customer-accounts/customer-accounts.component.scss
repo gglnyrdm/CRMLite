@@ -1,0 +1,45 @@
+.create-new-button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(245, 130, 32, 0.6);
+  border: none;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 18.15px;
+  color: rgba(255, 255, 255, 1);
+  margin: 10px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.73px;
+  border-bottom: 3px solid rgba(36, 36, 65, 0.8);
+  margin-top: 1.8rem;
+  padding-left: 0.8rem;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+.menu {
+  border: 1px solid rgba(0, 0, 0, 1);
+  height: 60px;
+  width: 100%;
+  background-color: rgba(36, 36, 65, 0.5);
+}
+.customer-detail-table {
+  width: 713px;
+  height: 160px;
+}
+i {
+  color: rgba(245, 130, 32, 1);
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+.accordion-button::after {
+  display: none !important;
+}
