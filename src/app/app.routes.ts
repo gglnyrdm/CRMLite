@@ -78,13 +78,20 @@ export const routes: Routes = [
                 component: CreateCustomerFormComponent,
             },
             {
-                path: 'address',
-                component: CreateCustomerAddressInfoComponent,
+                path: 'addressinfo',
+                component: CreateCustomerAddressInfoComponent
+                // children:[
+                //     {
+                //         path: 'form',
+                //         component: CreateCustomerAddressFormComponent,
+                //     },
+                // ]
             },
             {
-                path: 'addressform',
+                path: 'address',
                 component: CreateCustomerAddressFormComponent,
             },
+            
             
 
         ]

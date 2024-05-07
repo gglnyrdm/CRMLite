@@ -1,1 +1,46 @@
-<p>create-customer-address-form works!</p>,
+<form>
+
+    <div class="content-area">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="left-side">
+                    <div class="input-area">
+                        <span>City*</span>
+                        <select class="form-select" aria-label="Default select example">
+                            <option hidden> </option>
+                            <option value="true">Female</option>
+                            <option value="false">Male</option>
+                        </select>
+                    </div>
+                    <div class="input-area">
+                        <span>House/Flat Number*</span>
+                        <input class="input-box" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-side">
+                    <div class="input-area">
+                        <span>Street*</span>
+                        <input class="input-box" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="address-description-area"> 
+                    <p class="address-description-text">Address Description<p>
+                    <input class="address-description-input" type="text">
+                </div>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="checkbox">
+                <label class="form-check-label" for="password">Set as a primary address</label>
+            </div>
+            <button class="cancel-button">Cancel</button>
+        <button class="save-button">Save</button>
+        </div>
+
+    </div>
+</form>
