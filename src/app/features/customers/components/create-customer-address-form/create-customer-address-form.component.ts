@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-customer-address-info',
+  selector: 'app-create-customer-address-form',
   standalone: true,
   imports: [
     CommonModule,
   ],
-  templateUrl: './customer-address-info.component.html',
-  styleUrl: './customer-address-info.component.scss',
+  templateUrl: './create-customer-address-form.component.html',
+  styleUrl: './create-customer-address-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomerAddressInfoComponent { }
+export class CreateCustomerAddressFormComponent { }

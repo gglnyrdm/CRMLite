@@ -59,7 +59,7 @@ onSubmitForm() {
 
     } else {
       this.showNationalityIdWarning = false;
-      this.createCustomer();
+      // this.createCustomer();
       console.log("Başarılı")
     }
   } else {

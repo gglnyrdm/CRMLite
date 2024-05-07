@@ -50,9 +50,7 @@
                           <div *ngIf="showInvalidFormWarning">
                             You have entered an invalid form of data. Please check.
                           </div>
-                        <button class="next-button" type="submit"  [ngStyle]="{'background-color': !form.valid ? '#E0E0E0' : '#F5822099'}">Next</button>
-                
-                        {{formattedDate}}
+                        <button class="next-button" type="submit" routerLink="/createcustomer/address" [disabled]="!form.valid"  [ngStyle]="{'background-color': !form.valid ? '#E0E0E0' : '#F5822099'}">Next</button>
                     </div>
             </div>
         </div>

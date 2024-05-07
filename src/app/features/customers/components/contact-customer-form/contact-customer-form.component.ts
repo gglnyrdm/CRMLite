@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { OnlyNumberInputDirective } from '../../../../core/directives/only-number-input.directive';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact-customer-form',
@@ -10,6 +11,7 @@ import { OnlyNumberInputDirective } from '../../../../core/directives/only-numbe
     CommonModule, 
     ReactiveFormsModule,
     OnlyNumberInputDirective,
+    RouterModule
     ],
   templateUrl: './contact-customer-form.component.html',
   styleUrl: './contact-customer-form.component.scss',
