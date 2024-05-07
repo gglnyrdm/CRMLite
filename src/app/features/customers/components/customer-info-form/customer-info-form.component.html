@@ -1,1 +1,56 @@
-<p>customer-info-form works!</p>
+<p class="title">Customer Info </p>
+<form [formGroup]="form" (submit)="onSubmitForm()">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="left-side">
+                        <div class="input-area">
+                            <span>First Name</span>
+                            <input type="text" formControlName="firstName">
+                        </div>
+                        <div class="input-area">
+                            <span>Last Name</span>
+                            <input type="text">
+                        </div>
+                        <div class="input-area">
+                            <span>Gender</span>
+                            <select class="form-select" aria-label="Default select example" formControlName="gender">
+                            <option hidden> </option>
+                            <option value="1">Female</option>
+                            <option value="2">Male</option>
+                        </select>
+                        </div>
+                        <div class="input-area">
+                            <span>Mother Name</span>
+                            <input type="text" formControlName="motherName">
+                        </div>
+                        
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-side">
+                        <div class="input-area">
+                            <span>Middle Name</span>
+                        <input type="text" formControlName="middleName">
+                        </div>
+                        <div class="input-area">
+                            <span>Birth Date</span>
+                            <input type="date" formControlName="birthDate">
+                        </div>
+                        <div class="input-area">
+                            <span>Father Name</span>
+                        <input type="text" formControlName="fatherName">
+                        </div>
+                        <div class="input-area">
+                            <span>Nationality ID</span>
+                        <input type="text" formControlName="nationalityId">
+                        </div>
+                        <div class="buttons">
+                        <button class="next-button" type="submit">Save</button>
+                        <button class="cancel-button" routerLink="/searchcustomer" type="submit">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

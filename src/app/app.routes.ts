@@ -9,6 +9,7 @@ import { CustomerInfoComponent } from './pages/customer/customer-info/customer-i
 import { CustomerAccountsComponent } from './pages/customer/customer-accounts/customer-accounts.component';
 import { CustomerAddressComponent } from './pages/customer/customer-address/customer-address.component';
 import { CustomerContactMediumComponent } from './pages/customer/customer-contact-medium/customer-contact-medium.component';
+import { CustomerInfoFormComponent } from './features/customers/components/customer-info-form/customer-info-form.component';
 
 export const routes: Routes = [
 
@@ -59,7 +60,10 @@ export const routes: Routes = [
                         path: 'customercontactmedium',
                         component: CustomerContactMediumComponent,
                     },
-                   
+                    {
+                        path: 'customerinfo-update',
+                        component: CustomerInfoFormComponent,
+                    },
                 ],
             }
         ]
