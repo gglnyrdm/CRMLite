@@ -34,7 +34,7 @@
                         </div>
                         <div class="input-area">
                             <span>Birth Date</span>
-                            <input type="date" formControlName="birthDate">
+                            <input type="date" formControlName="birthDate" min="1920-01-01" [max]="formattedDate">
                         </div>
                         <div class="input-area">
                             <span>Father Name</span>
@@ -45,7 +45,9 @@
                         <input type="text" formControlName="nationalityId">
                         </div>
                         <button class="next-button" type="submit" [disabled]="!form.valid"  [ngStyle]="{'background-color': !form.valid ? '#E0E0E0' : '#F5822099'}">Next</button>
-                </div>
+                
+                        {{formattedDate}}
+                    </div>
             </div>
         </div>
     </div>

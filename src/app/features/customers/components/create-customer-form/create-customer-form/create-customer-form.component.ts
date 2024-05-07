@@ -20,7 +20,12 @@ import { CustomerApiService } from '../../../services/customerApi.service';
 export class CreateCustomerFormComponent {
   isFormValid: boolean = false;
 
-form:FormGroup = this.fb.group({
+  //birthDate
+  currentDate = new Date();
+  eighteenYearsAgo = new Date(this.currentDate.getFullYear() - 18, this.currentDate.getMonth(), this.currentDate.getDate());
+  formattedDate = `${this.eighteenYearsAgo.getFullYear()}-${String(this.eighteenYearsAgo.getMonth() + 1).padStart(2, '0')}-${String(this.eighteenYearsAgo.getDate()).padStart(2, '0')}`;
+  
+  form:FormGroup = this.fb.group({
   firstName: new FormControl('asdasd',[Validators.required]),
   lastName: new FormControl('asdadas',[Validators.required]),
   gender: new FormControl('true',[Validators.required]),
@@ -37,11 +42,6 @@ constructor(private fb:FormBuilder,private customerApiService:CustomerApiService
     this.isFormValid = this.form.valid;
   });
 }
-
-
-
-
-
 
 
 
