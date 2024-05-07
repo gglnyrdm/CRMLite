@@ -14,7 +14,7 @@
 
 span {
     display: inline-block;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 1.2rem;
     line-height: 1.51rem;
     color: #3F3F77;
@@ -28,14 +28,16 @@ span {
     float: right;
   }
   
-  .input-area {
-    position: relative;
-    margin-bottom: 5rem;
-    // background-color: red;
-    width: 30rem;
-    // margin-right: 4rem;
-    // margin-left: 4rem;
-  }
+  .input-area{
+    width: 70%;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.05px;
+    text-align: left;
+    margin-bottom: 2rem;
+    margin-left: 4rem;
+    font-weight: bold;
+    }
   
   .form-select {
     width: 14rem;
@@ -50,7 +52,7 @@ span {
   
   .left-side {
     position: relative;
-    margin-right: 5rem;
+    margin-left: 2rem;
     width: 100%;
     height: 100%;
     // background-color: green;
@@ -58,27 +60,25 @@ span {
   
   .right-side {
     position: relative;
-    margin-left: 5rem;
-  
     width: 100%;
-    // background-color: red;
   }
   
   
-  .next-button {
+  .save-button {
     position: relative;
     display: flex;
     left: 70%;
     align-items: center;
     justify-content: center;
     color: white;
-    background-color: #E0E0E0;
+    background-color: #F9B479;
     width: 6.25rem;
     height: 1.9rem;
     border-radius: 0.7rem;
     border: none;
     font-weight: 400;
     font-size: 1rem;
+    
   }
   
   .cancel-button {
@@ -94,4 +94,11 @@ span {
     border: none;
     font-weight: 400;
     font-size: 1rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+    margin-right: 4rem;
   }
