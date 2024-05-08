@@ -52,6 +52,7 @@ constructor(private fb:FormBuilder,private customerApiService:CustomerApiService
 }
 
 onSubmitForm() {
+  debugger;
   if (this.form.valid) {
     if (this.form.controls['nationalityId'].value.length < 11 ) {
       this.showNationalityIdWarning = true;

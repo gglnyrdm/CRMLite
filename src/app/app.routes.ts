@@ -90,6 +90,12 @@ export const routes: Routes = [
             {
                 path: 'addressinfo',
                 component: CreateCustomerAddressInfoComponent
+                // children:[
+                //     {
+                //         path: 'form',
+                //         component: CreateCustomerAddressFormComponent,
+                //     },
+                // ]
             },
             {
                 path: 'address',
@@ -101,5 +107,4 @@ export const routes: Routes = [
         path:'contactcustomer',
         component:ContactCustomerComponent
     },
-    
 ];

@@ -1,3 +1,7 @@
+.container {
+  padding-left: 0.8rem;
+}
+
 .create-new-button {
   width: 200px;
   height: 50px;
@@ -17,29 +21,51 @@ h1 {
   line-height: 38.73px;
   border-bottom: 3px solid rgba(36, 36, 65, 0.8);
   margin-top: 1.8rem;
-  padding-left: 0.8rem;
 }
-
-table {
+//Customer Table
+.customer-head {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
-
 .menu {
   border: 1px solid rgba(0, 0, 0, 1);
   height: 60px;
   width: 100%;
   background-color: rgba(36, 36, 65, 0.5);
+  display: flex;
+  align-items: center;
 }
-.customer-detail-table {
+.customer-table {
+  text-align: center;
+  border: 1px solid;
+}
+.customer-table .customer-table-head .row {
+  display: flex;
+  align-items: center;
+}
+
+.customer-table-data {
+  display: flex;
+  justify-content: center;
+}
+
+.customer-table-data table,
+tr,
+th,
+td {
   width: 713px;
-  height: 160px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 13.31px;
+  border: 1px solid;
 }
+
+//icon
 i {
   color: rgba(245, 130, 32, 1);
   font-size: 1.4rem;
   padding: 1rem;
-}
-.accordion-button::after {
-  display: none !important;
 }

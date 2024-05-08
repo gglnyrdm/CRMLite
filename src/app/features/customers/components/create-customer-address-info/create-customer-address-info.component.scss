@@ -1,3 +1,9 @@
+.address-info-title {
+  margin-top: 0;
+  margin-left: 0.7rem;
+  margin-bottom: 0;
+}
+
 .content {
   position: relative;
   border: 1px solid;
@@ -5,6 +11,106 @@
   min-width: 100%;
   height: 100%;
 }
-button {
+
+.primary-address-area{
+  margin-top: 3%;
+// background-color: red;
+margin-left: 30%;
+}
+.add-new-address-button {
   display: block;
+  width: 8.125rem;
+  height: 3.125rem;
+  background-color: #F5822099;
+  color: white;
+  border-radius: 0.7rem;
+  border:none;
+  margin-bottom: 1rem;
+}
+
+.primary-address-text{
+font-size: 20px;
+font-weight: 500;
+line-height: 1.51rem;
+color:#242441;
+}
+.address-box-update-menu{
+  width: 15.62rem;
+  height: 15.62rem;
+  border: 3px solid #F5822099;
+  border-radius: 0.6rem;
+  // background-color: green;
+  padding-right: 1rem;
+  padding-top: 0.5rem ;
+  i{
+    position: relative;
+    width: 100%;
+    // background-color: purple;
+    padding-left: 95%;
+    float: right;
+    font-size: 2rem;
+  }
+  p{
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+    display: block;
+    padding-left: 15%;
+  }
+}
+
+.menu-content {
+  display: block; /* Değişiklik: Menü içeriğini görünür hale getirin */
+  position: relative;
+  left: 85%;
+  width: 6.5rem;
+  height: 5.43rem;
+  border: 1px solid #F5822099;
+  border-radius: 1.5rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // background-color: red;
+}
+
+.menu-content button {
+  display: block;
+  width: 4rem;
+  height: 1.56rem;
+  font-size: 1rem;
+  border:none;  
+  border-radius: 16px;
+}
+.edit-button {
+  background-color: #F5822099;
+  margin-bottom:10px;
+}
+
+.previous-button {
+  position: relative;
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  float: left;
+  width: 6.25rem;
+  height: 1.8rem;
+  background-color: #F5822099;
+  color: white;
+  border-radius: 0.7rem;
+  border:none;
+}
+.next-button {
+  position: relative;
+  float: right;
+  margin-right: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  background-color: #F5822099;
+  color: white;
+  border-radius: 0.7rem;
+  border:none;
+  width: 6.25rem;
+  height: 1.8rem;
 }
