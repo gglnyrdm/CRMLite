@@ -1,3 +1,9 @@
+.address-info-title {
+  margin-top: 0;
+  margin-left: 0.7rem;
+  margin-bottom: 0;
+}
+
 .content {
   position: relative;
   border: 1px solid;
@@ -7,7 +13,7 @@
 }
 
 .primary-address-area{
-  margin-top: 20%;
+  margin-top: 3%;
 // background-color: red;
 margin-left: 30%;
 }
@@ -19,7 +25,7 @@ margin-left: 30%;
   color: white;
   border-radius: 0.7rem;
   border:none;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .primary-address-text{
@@ -80,4 +86,31 @@ color:#242441;
 .edit-button {
   background-color: #F5822099;
   margin-bottom:10px;
+}
+
+.previous-button {
+  position: relative;
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  float: left;
+  width: 6.25rem;
+  height: 1.8rem;
+  background-color: #F5822099;
+  color: white;
+  border-radius: 0.7rem;
+  border:none;
+}
+.next-button {
+  position: relative;
+  float: right;
+  margin-right: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  background-color: #F5822099;
+  color: white;
+  border-radius: 0.7rem;
+  border:none;
+  width: 6.25rem;
+  height: 1.8rem;
 }

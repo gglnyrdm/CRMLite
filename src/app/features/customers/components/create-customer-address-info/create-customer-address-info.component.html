@@ -1,5 +1,5 @@
+<p class="address-info-title">Address Info</p>
 <div class="content">
-    
     <div class="row">
         <div class="col-md-4">
             <div class="primary-address-area">
@@ -8,10 +8,10 @@
                 <div class="address-block">
                     <div class="address-box-update-menu">
                         <i class="fa-solid fa-ellipsis-vertical" (click)="toggleMenu()"></i>
-                        <div class="menu-content" *ngIf="menuVisible" >
+                        <div class="menu-content" *ngIf="menuVisible">
                             <button class="edit-button">Edit</button>
                             <button id="deleteButton">Delete</button>
-                          </div>
+                        </div>
                         <p>İstanbul</p>
                         <p>Hilmi Str.</p>
                         <p>G8/12</p>
@@ -23,10 +23,10 @@
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>
     </div>
-
-    
-
-<button routerLink="/createcustomer">Previous</button>
-<button routerLink="/contactcustomer">Next</button>
-</div>
-
+    <div class="row">
+        <div class="col-md-12">
+            <button class="previous-button"  routerLink="/createcustomer">Previous</button>
+            <button  class="next-button" routerLink="/contactcustomer">Next</button>
+            <div>
+            </div>
+        </div>
