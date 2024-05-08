@@ -80,25 +80,16 @@ export const routes: Routes = [
             {
                 path: 'addressinfo',
                 component: CreateCustomerAddressInfoComponent
-                // children:[
-                //     {
-                //         path: 'form',
-                //         component: CreateCustomerAddressFormComponent,
-                //     },
-                // ]
+                
             },
             {
                 path: 'address',
                 component: CreateCustomerAddressFormComponent,
             },
-            
-            
-
         ]
     },
     {
         path:'contactcustomer',
         component:ContactCustomerComponent
     },
-    
 ];
