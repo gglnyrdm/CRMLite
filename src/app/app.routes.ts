@@ -14,6 +14,7 @@ import { CreateCustomerFormComponent } from './features/customers/components/cre
 import { CreateCustomerAddressInfoComponent } from './features/customers/components/create-customer-address-info/create-customer-address-info.component';
 import { CreateCustomerAddressFormComponent } from './features/customers/components/create-customer-address-form/create-customer-address-form.component';
 import { CustomerInfoAddressAddFormComponent } from './features/customers/components/customer-info-address-add-form/customer-info-address-add-form.component';
+import { CustomerInfoContactFormComponent } from './features/customers/components/customer-info-contact-form/customer-info-contact-form.component';
 
 export const routes: Routes = [
 
@@ -69,6 +70,10 @@ export const routes: Routes = [
                     {
                         path: 'customeraddress-add',
                         component: CustomerInfoAddressAddFormComponent,
+                    },
+                    {
+                        path: 'customercontact-update',
+                        component: CustomerInfoContactFormComponent,
                     }
                 ],
             }
@@ -85,20 +90,11 @@ export const routes: Routes = [
             {
                 path: 'addressinfo',
                 component: CreateCustomerAddressInfoComponent
-                // children:[
-                //     {
-                //         path: 'form',
-                //         component: CreateCustomerAddressFormComponent,
-                //     },
-                // ]
             },
             {
                 path: 'address',
                 component: CreateCustomerAddressFormComponent,
             },
-            
-            
-
         ]
     },
     {
