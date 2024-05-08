@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { Observable } from 'rxjs';
-import { CreateCustomerRequest } from '../models/createModelRequest';
+import { CreateCustomerRequest } from '../models/requests/create-customer-request';
 import { __param } from 'tslib';
 
 @Injectable({

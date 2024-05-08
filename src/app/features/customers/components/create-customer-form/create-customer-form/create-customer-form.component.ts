@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { CreateCustomerRequest } from '../../../models/createModelRequest';
+import { Router, RouterModule } from '@angular/router';
+import { CreateCustomerRequest } from '../../../models/requests/create-customer-request';
 import { CustomerApiService } from '../../../services/customerApi.service';
 import { OnlyLetterDirective } from '../../../../../core/directives/only-letter.directive';
 import { OnlyNumberInputDirective } from '../../../../../core/directives/only-number-input.directive';
-import { log } from 'console';
+import { Store, select } from '@ngrx/store';
+import { setIndividualCustomer } from '../../../../../shared/store/customers/individual-customer.action';
+import { selectIndividualCustomer } from '../../../../../shared/store/customers/individual-customer.selector';
 
 @Component({
   selector: 'app-create-customer-form',
@@ -23,8 +25,10 @@ import { log } from 'console';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateCustomerFormComponent {
+  
+  
   isFormValid: boolean = false;
-
+  form:FormGroup;
   //birthDate
   currentDate = new Date();
   eighteenYearsAgo = new Date(this.currentDate.getFullYear() - 18, this.currentDate.getMonth(), this.currentDate.getDate());
@@ -33,34 +37,37 @@ export class CreateCustomerFormComponent {
   showNationalityIdWarning: boolean = false;
   showInvalidFormWarning:boolean = false;
 
-  form:FormGroup = this.fb.group({
-  firstName: new FormControl('asdasd',[Validators.required]),
-  lastName: new FormControl('asdadas',[Validators.required]),
-  gender: new FormControl('true',[Validators.required]),
-  motherName: new FormControl('asdada'),
-  middleName: new FormControl('asdasdasd'),
-  birthDate: new FormControl('',[Validators.required]),
-  fatherName: new FormControl('asdasda'),
-  nationalityId: new FormControl('1234', [Validators.required, Validators.maxLength(11)])
-})
+   
 
-constructor(private fb:FormBuilder,private customerApiService:CustomerApiService){
+constructor(
+  private fb:FormBuilder,
+  private customerApiService:CustomerApiService,
+  private store:Store<{individualCustomer:CreateCustomerRequest}>,
+  private router:Router
+){
 
-  this.form.valueChanges.subscribe(() => {
-    this.isFormValid = this.form.valid;
-  });
+  // this.form.valueChanges.subscribe(() => {
+  //   this.isFormValid = this.form.valid;
+  // });
+}
+
+ngOnInit():void {
+  this.createForm();
+  this.store.pipe(select(selectIndividualCustomer)).subscribe((individualCustomer)=>{
+    console.log(individualCustomer)
+    this.form.patchValue(individualCustomer)
+  })
 }
 
 onSubmitForm() {
-  debugger;
   if (this.form.valid) {
-    if (this.form.controls['nationalityId'].value.length < 11 ) {
+    if (this.form.controls['nationalityIdentity'].value.length < 11 ) {
       this.showNationalityIdWarning = true;
       this.showInvalidFormWarning = false;
 
     } else {
       this.showNationalityIdWarning = false;
-      // this.createCustomer();
+      this.createCustomer();
       console.log("Başarılı")
     }
   } else {
@@ -69,8 +76,21 @@ onSubmitForm() {
   }
 }
 
+createForm() {
+  this.form = this.fb.group({
+    firstName: ['', Validators.required],
+    middleName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    gender: ['', Validators.required],
+    motherName: ['', Validators.required],
+    fatherName: ['', Validators.required],
+    birthDate: ['', Validators.required],
+    nationalityIdentity: ['', Validators.required],
+  });
+}
+
 createCustomer() {
-  const createCustomerRequest : CreateCustomerRequest={
+  const individualCustomer : CreateCustomerRequest={
     firstName:this.form.value.firstName,
     lastName:this.form.value.lastName,
     gender:this.form.value.gender,
@@ -78,21 +98,13 @@ createCustomer() {
     middleName:this.form.value.middleName,
     birthDate:this.form.value.birthDate,
     fatherName:this.form.value.fatherName,
-    nationalityIdentity:this.form.value.nationalityId,
-    email:"deneme"
+    nationalityIdentity:this.form.value.nationalityIdentity
   };
-  debugger;
-  this.customerApiService.postCustomer(createCustomerRequest).subscribe({
-    next(createCustomerRequest) {
-      console.log("Başarılı");
-  },
-  error(err) {
-      console.error('Error',err);
-  },
-  complete:() => {
-    console.info("Customer create succesfully");
-    this.form.reset();
-  }
-  })
+
+  this.store.dispatch(
+    setIndividualCustomer({individualCustomer})
+  )
+
+  this.router.navigate(['createcustomer/addressinfo'])
 }
 }

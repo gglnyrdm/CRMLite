@@ -2,10 +2,9 @@ export interface CreateCustomerRequest {
     firstName : string;
     middleName: string;
     lastName : string;
-    email: string;
-    gender : boolean;
+    gender : string;
     motherName : string;
     fatherName : string;
-    birthDate : Date;
+    birthDate : Date | null;
     nationalityIdentity : string;
 }
