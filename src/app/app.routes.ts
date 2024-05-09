@@ -15,6 +15,8 @@ import { CreateCustomerAddressInfoComponent } from './features/customers/compone
 import { CreateCustomerAddressFormComponent } from './features/customers/components/create-customer-address-form/create-customer-address-form.component';
 import { CustomerInfoAddressAddFormComponent } from './features/customers/components/customer-info-address-add-form/customer-info-address-add-form.component';
 import { CustomerInfoContactFormComponent } from './features/customers/components/customer-info-contact-form/customer-info-contact-form.component';
+import { CreateBillingAccountComponent } from './pages/create-billing-account/create-billing-account.component';
+import { BillingAccountFormComponent } from './features/billing-account/components/billing-account-form/billing-account-form.component';
 
 export const routes: Routes = [
 
@@ -29,13 +31,13 @@ export const routes: Routes = [
         component: LoginPageComponent,
     },
     {
-        path: 'searchcustomer', 
+        path: 'searchcustomer',
         component: MainLayoutComponent,
-        children:[
+        children: [
             {
-                path:'',
-                pathMatch:'full',
-                component:SearchCustomerComponent 
+                path: '',
+                pathMatch: 'full',
+                component: SearchCustomerComponent
             },
         ]
     },
@@ -44,7 +46,7 @@ export const routes: Routes = [
         component: MainLayoutComponent,
         children: [
             {
-                path:'',
+                path: '',
                 component: CustomerProfileComponent,
                 children: [
                     {
@@ -58,7 +60,7 @@ export const routes: Routes = [
                     {
                         path: 'customeraccounts',
                         component: CustomerAccountsComponent,
-                    }, 
+                    },
                     {
                         path: 'customercontactmedium',
                         component: CustomerContactMediumComponent,
@@ -80,8 +82,8 @@ export const routes: Routes = [
         ]
     },
     {
-        path:'createcustomer',
-        component:CreateCustomerComponent,
+        path: 'createcustomer',
+        component: CreateCustomerComponent,
         children: [
             {
                 path: '',
@@ -104,7 +106,17 @@ export const routes: Routes = [
         ]
     },
     {
-        path:'contactcustomer',
-        component:ContactCustomerComponent
+        path: 'createbillingaccount',
+        component: CreateBillingAccountComponent,
+        children: [
+            {
+                path: '',
+                component:BillingAccountFormComponent
+            },
+        ]
+    },
+    {
+        path: 'contactcustomer',
+        component: ContactCustomerComponent
     },
 ];
