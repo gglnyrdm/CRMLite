@@ -1,0 +1,100 @@
+.input-box {
+  width: 14rem;
+  height: 2rem;
+  border: 3px solid #f5822099;
+  border-radius: 0.6rem;
+  float: right;
+}
+.input-area {
+  position: relative;
+  margin-bottom: 5rem;
+  width: 30rem;
+  height: 2rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.address-description-input {
+  position: relative;
+  width: 80%;
+  height: 6rem;
+  border: 3px solid #f5822099;
+  border-radius: 0.6rem;
+  padding: 0;
+}
+
+.address-description-text {
+  position: relative;
+}
+
+.address-info-area {
+  border: 0.16rem solid rgba(245, 130, 32, 0.6);
+  border-radius: 1.25rem;
+  margin-right: 3rem;
+  margin-left: 0.8rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 330px;
+  height: 230px;
+}
+
+.address-info {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.51rem;
+  margin-top: 1.2rem;
+}
+
+.menu {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: end;
+  margin-right: 1.6rem;
+}
+
+.form-control:focus,
+.form-check-input:focus {
+  border: 3px solid rgba(245, 130, 32, 0.6);
+  box-shadow: none;
+}
+
+.form-check-input:checked {
+  background-color: rgba(245, 130, 32, 0.6);
+  border-color: rgba(245, 130, 32, 0.6);
+}
+.button-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cancel-button {
+  position: relative;
+  margin-left: 1rem;
+  color: white;
+  background-color: #f9b479;
+  border-radius: 15px;
+  border: none;
+  width: 200px;
+  height: 50px;
+  font-weight: 400;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 38.73px;
+}
+
+.create-button {
+  position: relative;
+  color: white;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  border: none;
+  font-weight: 400;
+  font-size: 1rem;
+  width: 200px;
+  height: 50px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.73px;
+}

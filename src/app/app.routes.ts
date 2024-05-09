@@ -16,7 +16,7 @@ import { CreateCustomerAddressFormComponent } from './features/customers/compone
 import { CustomerInfoAddressAddFormComponent } from './features/customers/components/customer-info-address-add-form/customer-info-address-add-form.component';
 import { CustomerInfoContactFormComponent } from './features/customers/components/customer-info-contact-form/customer-info-contact-form.component';
 import { CreateBillingAccountComponent } from './pages/create-billing-account/create-billing-account.component';
-import { BillingAccountFormComponent } from './features/billing-account/components/billing-account-form/billing-account-form.component';
+import { CreateBillingAccountFormComponent } from './features/create-billing-account/components/create-billing-account-form/create-billing-account-form.component';
 
 export const routes: Routes = [
 
@@ -111,7 +111,7 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                component:BillingAccountFormComponent
+                component:CreateBillingAccountFormComponent 
             },
         ]
     },
