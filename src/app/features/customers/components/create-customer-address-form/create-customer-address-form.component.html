@@ -1,11 +1,11 @@
-<form>
+<form form [formGroup]="form" (submit)="onSubmitForm()">
     <div class="content-area">
         <div class="row">
             <div class="col-md-6">
                 <div class="left-side">
                     <div class="input-area">
                         <span>City*</span>
-                        <select class="form-select" aria-label="Default select example">
+                        <select class="form-select" aria-label="Default select example" formControlName="city">
                             <option hidden> </option>
                             <option value="true">Female</option>
                             <option value="false">Male</option>
@@ -13,7 +13,7 @@
                     </div>
                     <div class="input-area">
                         <span>House/Flat Number*</span>
-                        <input class="input-box" type="text">
+                        <input class="input-box" type="text" maxlength="20" formControlName="houseFlatNumber">
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                 <div class="right-side">
                     <div class="input-area">
                         <span>Street*</span>
-                        <input class="input-box" type="text">
+                        <input class="input-box" type="text" maxlength="50" formControlName="street">
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
             <div class="col-md-12">
                 <div class="address-description-area"> 
                     <p class="address-description-text">Address Description<p>
-                    <input class="address-description-input" type="text">
+                    <input class="address-description-input" type="text" maxlength="150" formControlName="addressDescription">
                 </div>
             </div>
             <div class="form-check">
@@ -38,7 +38,7 @@
                 <label class="form-check-label" for="password">Set as a primary address</label>
             </div>
             <button class="cancel-button" routerLink="/createcustomer/addressinfo">Cancel</button>
-        <button class="save-button">Save</button>
+        <button class="save-button" type="submit" [disabled]="!form.valid" [ngStyle]="{'background-color': !form.valid ? '#E0E0E0' : '#F5822099'}">Save</button>
         </div>
 
     </div>
