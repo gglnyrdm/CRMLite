@@ -55,15 +55,43 @@ margin-bottom: 2rem;
 #log-out-icon {
   margin-bottom: 3rem;
 }
-img {
+#b2c-icon {
   opacity: 0.85;
   max-width: 4.4rem;
   max-height: 3.5rem;
 }
 
-img:hover {
+#b2c-icon:hover {
   cursor: pointer;
   opacity: 1;
+  max-width: 4.4rem;
+  max-height: 3.5rem;
+}
+
+#log-out-icon {
+  opacity: 0.85;
+  max-width: 4.4rem;
+  max-height: 3.5rem;
+}
+
+#log-out-icon:hover {
+  cursor: pointer;
+  opacity: 1;
+  max-width: 4.4rem;
+  max-height: 3.5rem;
+}
+
+#b2b-icon {
+  max-width: 4.4rem;
+  max-height: 3.5rem;
+}
+
+#menu-icon{
+  max-width: 4.4rem;
+  max-height: 3.5rem;
+}
+
+#right-hand-icon{
   max-width: 4.4rem;
   max-height: 3.5rem;
 }

@@ -9,19 +9,29 @@
   // background-color: red;
   border-radius: 1.625rem;
   margin-left: 1rem;
-  margin-top: 1rem;
   padding-left: 1rem;
 }
 
-p {
+
+.input-name {
   position: relative;
   margin-top: 1rem;
   font-weight: 550;
   font-size: 1.2rem;
   line-height: 1.51rem;
   color: #3F3F77;
-  margin-bottom: 0.3rem;
-  margin-top: 0.3rem;
+  margin-bottom: 0.1rem;
+  margin-top: 0.1rem;
+}
+
+.search-filter-title {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  margin-left: 2rem;
+  font-weight: 550;
+  font-size: 1.2rem;
+  line-height: 1.51rem;
+  color: #3F3F77;
 }
 
 input {

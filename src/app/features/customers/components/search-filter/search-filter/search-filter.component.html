@@ -1,18 +1,19 @@
+<p class="search-filter-title">Search Filter</p>
 <div class="form-area">
     <form [formGroup]="form" (submit)="onSubmitForm()">
-        <p>ID Number</p>
+        <p class="input-name">ID Number</p>
         <input type="text" appOnlyNumberInput formControlName="idNumber" >
-        <p>Customer ID</p>
+        <p class="input-name">Customer ID</p>
         <input type="text" appOnlyNumberInput formControlName="customerId">
-        <p>Account Number</p>
+        <p class="input-name">Account Number</p>
         <input type="text"  appOnlyNumberInput formControlName="accountNumber">
-        <p>GSM Number</p>
+        <p class="input-name">GSM Number</p>
         <input type="text" appOnlyNumberInput formControlName="gsmNumber">
-        <p>First Name</p>
+        <p class="input-name">First Name</p>
         <input type="text" appOnlyLetterDirective formControlName="firstName">
-        <p>Last Name</p>
+        <p class="input-name">Last Name</p>
         <input type="text" appOnlyLetterDirective formControlName="lastName">
-        <p>Order Number</p>
+        <p class="input-name">Order Number</p>
         <input type="text" appOnlyNumberInput formControlName="orderNumber">
         <button type="reset" [disabled]="isDisabledClearButton" [ngStyle]="{'background-color': isDisabledSearchButton ? '#E0E0E0' : '#242441'}">CLEAR</button>
         <button type="submit" [disabled]="isDisabledSearchButton" [ngStyle]="{'background-color': isDisabledSearchButton ? '#E0E0E0' : '#F5822099'}" >SEARCH</button>

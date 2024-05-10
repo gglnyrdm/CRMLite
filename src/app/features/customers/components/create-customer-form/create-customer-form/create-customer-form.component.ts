@@ -79,11 +79,11 @@ onSubmitForm() {
 createForm() {
   this.form = this.fb.group({
     firstName: ['', Validators.required],
-    middleName: ['', Validators.required],
+    middleName: [''],
     lastName: ['', Validators.required],
     gender: ['', Validators.required],
-    motherName: ['', Validators.required],
-    fatherName: ['', Validators.required],
+    motherName: [''],
+    fatherName: [''],
     birthDate: ['', Validators.required],
     nationalityIdentity: ['', Validators.required],
   });
