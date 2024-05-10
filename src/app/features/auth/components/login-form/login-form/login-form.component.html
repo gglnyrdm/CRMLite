@@ -12,7 +12,7 @@
             placeholder="Enter Password" [(ngModel)]="password" (ngModelChange)="checkInputs()"
             (keydown)="checkCapsLock($event)" #passwordInput="ngModel" minlength="8" maxlength="20" required>
         <span (click)="togglePasswordVisibility()"><i class="far"
-                [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i></span>
+                [ngClass]="{'fa-eye-slash': !showPassword, 'fa-eye': showPassword}"></i></span>
     </div>
     <div *ngIf="capsLockWarning" class="caps-lock-warning" role="alert">
         Capslock is on.
