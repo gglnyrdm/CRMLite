@@ -15,8 +15,10 @@ import { CreateCustomerAddressInfoComponent } from './features/customers/compone
 import { CreateCustomerAddressFormComponent } from './features/customers/components/create-customer-address-form/create-customer-address-form.component';
 import { CustomerInfoAddressAddFormComponent } from './features/customers/components/customer-info-address-add-form/customer-info-address-add-form.component';
 import { CustomerInfoContactFormComponent } from './features/customers/components/customer-info-contact-form/customer-info-contact-form.component';
-import { CreateBillingAccountComponent } from './pages/create-billing-account/create-billing-account.component';
+import { CreateBillingAccountComponent } from './pages/billing-account/create-billing-account/create-billing-account.component';
 import { CreateBillingAccountFormComponent } from './features/create-billing-account/components/create-billing-account-form/create-billing-account-form.component';
+import { UpdateBillingAccountComponent } from './pages/billing-account/update-billing-account/update-billing-account.component';
+import { UpdateBillingAccountFormComponent } from './features/create-billing-account/components/update-billing-account-form/update-billing-account-form.component';
 
 export const routes: Routes = [
 
@@ -112,6 +114,16 @@ export const routes: Routes = [
             {
                 path: '',
                 component:CreateBillingAccountFormComponent 
+            },
+        ]
+    },
+    {
+        path: 'updatebillingaccount',
+        component: UpdateBillingAccountComponent,
+        children: [
+            {
+                path: '',
+                component:UpdateBillingAccountFormComponent 
             },
         ]
     },
