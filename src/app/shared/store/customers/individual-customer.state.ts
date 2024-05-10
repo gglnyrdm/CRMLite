@@ -1,4 +1,4 @@
-import { CreateCustomerRequest } from "../../../features/customers/models/requests/create-customer-request";
+import { CreateCustomerRequest } from "../../../features/customers/models/requests/customer/create-customer-request";
 
 export interface IndividualCustomerState {
     individualCustomer:CreateCustomerRequest;

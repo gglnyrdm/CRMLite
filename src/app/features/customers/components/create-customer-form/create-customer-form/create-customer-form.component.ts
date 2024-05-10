@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { CreateCustomerRequest } from '../../../models/requests/create-customer-request';
+import { CreateCustomerRequest } from '../../../models/requests/customer/create-customer-request';
 import { CustomerApiService } from '../../../services/customerApi.service';
 import { OnlyLetterDirective } from '../../../../../core/directives/only-letter.directive';
 import { OnlyNumberInputDirective } from '../../../../../core/directives/only-number-input.directive';
