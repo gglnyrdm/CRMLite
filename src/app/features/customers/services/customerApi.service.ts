@@ -9,7 +9,6 @@ import { __param } from 'tslib';
   providedIn: 'root'
 })
 export class CustomerApiService {
-  // private apiControllerUrl = `${environment.apiUrl}/individualCustomer`;
   private apiControllerUrl = `${environment.apiUrl}/individualCustomers`;
 
 

@@ -5,11 +5,11 @@
                 <div class="left-side">
                     <div class="input-area">
                         <span>City*</span>
-                        <select class="form-select" aria-label="Default select example" formControlName="city">
+                        <select class="form-select overflow-auto" aria-label="Default select example" formControlName="city">
                             <option hidden> </option>
-                            <option value="true">Female</option>
-                            <option value="false">Male</option>
+                            <option *ngFor="let city  of cityList" [value]="city.id">{{city.name }}</option>
                         </select>
+                        
                     </div>
                     <div class="input-area">
                         <span>House/Flat Number*</span>
