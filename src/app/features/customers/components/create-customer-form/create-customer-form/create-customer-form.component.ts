@@ -25,8 +25,6 @@ import { selectIndividualCustomer } from '../../../../../shared/store/customers/
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CreateCustomerFormComponent {
-  
-  
   isFormValid: boolean = false;
   form:FormGroup;
   //birthDate
@@ -36,8 +34,6 @@ export class CreateCustomerFormComponent {
   
   showNationalityIdWarning: boolean = false;
   showInvalidFormWarning:boolean = false;
-
-   
 
 constructor(
   private fb:FormBuilder,

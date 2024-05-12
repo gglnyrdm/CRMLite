@@ -55,8 +55,8 @@ export class CreateCustomerAddressFormComponent {
 
   createCustomerAddress() {
     const individualCustomerAddress : PostAddressRequest={
-      customerId: '',
-      cityId: '',
+      customerId: null,
+      cityId: this.form.value.city,
       houseFlatNumber: this.form.value.houseFlatNumber,
       street: this.form.value.street,
       addressDescription: this.form.value.addressDescription
@@ -69,7 +69,6 @@ export class CreateCustomerAddressFormComponent {
   }
 
   onSubmitForm() {
-    console.log("Save çalışıyor");
-    } 
+    this.createCustomerAddress();
 }
-
+}

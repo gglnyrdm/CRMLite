@@ -5,17 +5,17 @@
             <div class="primary-address-area">
                 <button class="add-new-address-button" routerLink="/createcustomer/address">Add New Address</button>
                 <p class="primary-address-text">Primary Address</p>
-                <div class="address-block">
+                <div class="address-block" *ngIf="cityId">
                     <div class="address-box-update-menu">
                         <i class="fa-solid fa-ellipsis-vertical" (click)="toggleMenu()"></i>
                         <div class="menu-content" *ngIf="menuVisible">
                             <button class="edit-button">Edit</button>
                             <button id="deleteButton">Delete</button>
                         </div>
-                        <p>İstanbul</p>
-                        <p>Hilmi Str.</p>
-                        <p>G8/12</p>
-                        <p>Address COmplex</p>
+                        <p>{{cityId}}</p>
+                        <p>{{street}}</p>
+                        <p>{{houseFlatNumber}}</p>
+                        <p>{{addressDescription}}</p>
                     </div>
                 </div>
             </div>

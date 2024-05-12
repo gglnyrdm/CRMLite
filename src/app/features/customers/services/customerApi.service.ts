@@ -4,6 +4,7 @@ import { environment } from '../../../../environments/environment';
 import { Observable } from 'rxjs';
 import { CreateCustomerRequest } from '../models/requests/customer/create-customer-request';
 import { __param } from 'tslib';
+import { PostCustomerResponse } from '../models/responses/customer/post-customer-response';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class CustomerApiService {
 
   constructor(private http:HttpClient) { }
 
-  postCustomer(createCustomerRequest : CreateCustomerRequest) : Observable<String>{
-    return this.http.post<String>(
+  postCustomer(createCustomerRequest : CreateCustomerRequest) : Observable<PostCustomerResponse>{
+    return this.http.post<PostCustomerResponse>(
       this.apiControllerUrl,createCustomerRequest
     );
   }
