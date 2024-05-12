@@ -55,7 +55,7 @@ export const routes: Routes = [
                 component: CustomerProfileComponent,
                 children: [
                     {
-                        path: 'customerinfo',
+                        path: 'customerinfo/:id',
                         component: CustomerInfoComponent,
                     },
                     {

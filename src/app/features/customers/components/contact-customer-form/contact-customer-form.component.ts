@@ -33,6 +33,8 @@ import { switchMap } from 'rxjs';
 })
 export class ContactCustomerFormComponent {
 
+  customerIdFromFirstReq: number;
+
 
   formContactMedium:FormGroup; 
   constructor(
@@ -60,23 +62,7 @@ export class ContactCustomerFormComponent {
     });
   }
 
-  createContactMedium() {
-    const contactMedium : PostContactMediumRequest={
-      customerId: null,
-      email:this.formContactMedium.value.email,
-      mobilePhone: this.formContactMedium.value.mobilePhone,
-      homePhone: this.formContactMedium.value.homePhone,
-      fax:this.formContactMedium.value.fax
-      
-    };
-    this.store.dispatch(
-      setContactMedium({contactMedium})
-    )
-    this.router.navigate(['/customerinfo'])
-  }
-
   onSubmitForm() {
-    // this.createContactMedium();
     this.makeRequests();
 }
 
@@ -95,7 +81,6 @@ goPrevious() {
 makeRequests(){
   let customerFromState: CreateCustomerRequest;
   let addressFromState: PostAddressRequest;
-  let customerIdFromFirstReq: number;
   this.store
     .pipe(select(selectIndividualCustomer))
     .subscribe((individualCustomer) => {
@@ -106,11 +91,10 @@ makeRequests(){
     .subscribe((customerAddress) => {
       addressFromState = customerAddress;
     });
+    debugger;
   this.customerApiService.postCustomer(customerFromState).pipe(
     switchMap( response1 => {
-        console.log("deneme");
-        debugger;
-        customerIdFromFirstReq = response1.id;
+        this.customerIdFromFirstReq = response1.id;
         let newAddress: PostAddressRequest = {
           customerId: response1.id,
           cityId: addressFromState.cityId,
@@ -118,7 +102,6 @@ makeRequests(){
           street: addressFromState.street,
           addressDescription: addressFromState.addressDescription,
         }
-        debugger;
         return this.addressApiService.post(newAddress).pipe(
           switchMap(response2 => {
             let contactMedium: PostContactMediumRequest = {
@@ -126,11 +109,18 @@ makeRequests(){
               homePhone: this.formContactMedium.value.homePhone,
               mobilePhone: this.formContactMedium.value.mobilePhone,
               fax: this.formContactMedium.value.fax,
-              customerId: customerIdFromFirstReq,
+              customerId: this.customerIdFromFirstReq,
             }
             return this.contactMediumApiService.post(contactMedium);
           })
         );
-    })).subscribe();
+    })).subscribe({
+      next: () => {
+    this.router.navigate([`/customerinfo/${this.customerIdFromFirstReq}`])
+      },
+      error: (err) => {
+       console.log(err); 
+      }
+    });
 }
 }
