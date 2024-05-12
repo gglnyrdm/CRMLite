@@ -16,9 +16,12 @@ import { CreateCustomerAddressFormComponent } from './features/customers/compone
 import { CustomerInfoAddressAddFormComponent } from './features/customers/components/customer-info-address-add-form/customer-info-address-add-form.component';
 import { CustomerInfoContactFormComponent } from './features/customers/components/customer-info-contact-form/customer-info-contact-form.component';
 import { CreateBillingAccountComponent } from './pages/billing-account/create-billing-account/create-billing-account.component';
-import { CreateBillingAccountFormComponent } from './features/create-billing-account/components/create-billing-account-form/create-billing-account-form.component';
 import { UpdateBillingAccountComponent } from './pages/billing-account/update-billing-account/update-billing-account.component';
-import { UpdateBillingAccountFormComponent } from './features/create-billing-account/components/update-billing-account-form/update-billing-account-form.component';
+import { OfferSelectionComponent } from './pages/offer-selection/components/offer-selection/offer-selection.component';
+import { OfferSelectionCatalogFormComponent } from './features/offer-selection/components/offer-selection-catalog-form/offer-selection-catalog-form.component';
+import { CreateBillingAccountFormComponent } from './features/billing-account/components/create-billing-account-form/create-billing-account-form.component';
+import { UpdateBillingAccountFormComponent } from './features/billing-account/components/update-billing-account-form/update-billing-account-form.component';
+import { OfferSelectionCampaignFormComponent } from './features/offer-selection/components/offer-selection-campaign-form/offer-selection-campaign-form.component';
 
 export const routes: Routes = [
 
@@ -113,7 +116,7 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                component:CreateBillingAccountFormComponent 
+                component: CreateBillingAccountFormComponent
             },
         ]
     },
@@ -123,12 +126,26 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                component:UpdateBillingAccountFormComponent 
+                component: UpdateBillingAccountFormComponent
             },
         ]
     },
     {
         path: 'contactcustomer',
         component: ContactCustomerComponent
+    },
+    {
+        path: 'offerseleciton',
+        component: OfferSelectionComponent,
+        children: [
+            {
+                path: 'catalog',
+                component: OfferSelectionCatalogFormComponent
+            },
+            {
+                path: 'campaign',
+                component: OfferSelectionCampaignFormComponent
+            }
+        ]
     },
 ];
