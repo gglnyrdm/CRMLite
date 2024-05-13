@@ -115,7 +115,7 @@ makeRequests(){
         );
     })).subscribe({
       next: () => {
-    this.router.navigate([`/customerinfo/${this.customerIdFromFirstReq}`])
+    this.router.navigate([`/customer/${this.customerIdFromFirstReq}/info`])
       },
       error: (err) => {
        console.log(err); 
