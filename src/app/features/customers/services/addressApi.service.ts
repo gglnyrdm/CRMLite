@@ -14,6 +14,7 @@ export class AddressApiService {
 
   constructor(private http:HttpClient) { }
   post(address: PostAddressRequest): Observable<PostAddressResponse> {
+    debugger;
     return this.http.post<PostAddressResponse>('http://localhost:8081/api/v1/addresses', address);
   }
 

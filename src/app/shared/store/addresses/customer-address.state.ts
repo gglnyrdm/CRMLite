@@ -6,7 +6,7 @@ export interface IndividualCustomerAddressState {
 
 export const initialIndividualCustomerAddressState:IndividualCustomerAddressState = {
     individualCustomerAddress:{
-        customerId:null,
+        customerId:'',
         cityId: '',
         houseFlatNumber: '',
         street: '',

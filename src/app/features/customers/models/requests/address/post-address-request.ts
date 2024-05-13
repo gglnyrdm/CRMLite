@@ -1,5 +1,5 @@
 export interface PostAddressRequest {
-    customerId: number;
+    customerId: string;
     cityId: string;
     houseFlatNumber: string;
     street: string;
