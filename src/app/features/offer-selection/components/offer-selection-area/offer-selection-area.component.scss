@@ -53,7 +53,14 @@
   line-height: 24.2px;
   color: rgba(255, 255, 255, 1);
 }
-
+.basket-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-area {
+  margin-top: 3rem;
+}
 .cancel-button-area {
   display: flex;
   justify-content: flex-start;
@@ -64,9 +71,6 @@
   justify-content: flex-end;
 }
 
-.button-area {
-  margin-top: 3rem;
-}
 .cancel-button,
 .next-button {
   background-color: rgba(245, 130, 32, 0.8);
