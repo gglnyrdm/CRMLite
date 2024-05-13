@@ -51,11 +51,11 @@ export const routes: Routes = [
         component: MainLayoutComponent,
         children: [
             {
-                path: '',
+                path: 'customer/:id',
                 component: CustomerProfileComponent,
                 children: [
                     {
-                        path: 'customerinfo/:id',
+                        path: 'info',
                         component: CustomerInfoComponent,
                     },
                     {

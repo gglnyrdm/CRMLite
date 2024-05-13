@@ -35,7 +35,6 @@ export class ContactCustomerFormComponent {
 
   customerIdFromFirstReq: number;
 
-
   formContactMedium:FormGroup; 
   constructor(
     private fb:FormBuilder,

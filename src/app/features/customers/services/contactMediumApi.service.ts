@@ -15,4 +15,8 @@ export class ContactMediumApiService {
       'http://localhost:8081/customerservice/api/v1/contact-mediums',contactMedium
     );
   }
+
+  // getById(customerId: string): Observable<GetContactMediumRequestDto>{
+  //   return this.http.get<GetContactMediumRequestDto>(`http://localhost:8081/customerservice/api/v1/contact-mediums/${customerId}`)
+  // }
 }

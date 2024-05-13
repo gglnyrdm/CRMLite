@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { CreateCustomerRequest } from '../models/requests/customer/create-customer-request';
 import { __param } from 'tslib';
 import { PostCustomerResponse } from '../models/responses/customer/post-customer-response';
+import { GetCustomerResponse } from '../models/responses/customer/get-customer-response';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,9 @@ export class CustomerApiService {
     return this.http.post<PostCustomerResponse>(
       this.apiControllerUrl,createCustomerRequest
     );
+  }
+
+  getById(id: number): Observable<GetCustomerResponse> {
+    return this.http.get<GetCustomerResponse>(`http://localhost:8081/api/v1/individualCustomers/${id}`)
   }
 }
