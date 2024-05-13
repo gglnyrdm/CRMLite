@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active catalog-button" id="home-tab" data-bs-toggle="tab"
+                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                        aria-selected="true">Catalog</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link campaign-button" id="profile-tab" data-bs-toggle="tab"
+                        data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                        aria-selected="false">Campaign</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <app-offer-selection-catalog-form></app-offer-selection-catalog-form>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <app-offer-selection-campaign-form></app-offer-selection-campaign-form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-2 basket-button-area">
+            <button class="basket-button">Add to Basket</button>
+        </div>
+        <div class="col-md-5"><app-offer-selection-basket></app-offer-selection-basket></div>
+    </div>
+    <div class="row button-area">
+        <div class="col-md-6 cancel-button-area"><button class="cancel-button" type="submit">Cancel</button></div>
+        <div class="col-md-6 next-button-area"><button class="next-button" type="submit">Next</button></div>
+    </div>
+</div>

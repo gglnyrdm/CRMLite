@@ -18,10 +18,9 @@ import { CustomerInfoContactFormComponent } from './features/customers/component
 import { CreateBillingAccountComponent } from './pages/billing-account/create-billing-account/create-billing-account.component';
 import { UpdateBillingAccountComponent } from './pages/billing-account/update-billing-account/update-billing-account.component';
 import { OfferSelectionComponent } from './pages/offer-selection/components/offer-selection/offer-selection.component';
-import { OfferSelectionCatalogFormComponent } from './features/offer-selection/components/offer-selection-catalog-form/offer-selection-catalog-form.component';
 import { CreateBillingAccountFormComponent } from './features/billing-account/components/create-billing-account-form/create-billing-account-form.component';
 import { UpdateBillingAccountFormComponent } from './features/billing-account/components/update-billing-account-form/update-billing-account-form.component';
-import { OfferSelectionCampaignFormComponent } from './features/offer-selection/components/offer-selection-campaign-form/offer-selection-campaign-form.component';
+import { OfferSelectionAreaComponent } from './features/offer-selection/components/offer-selection-area/offer-selection-area.component';
 
 export const routes: Routes = [
 
@@ -140,12 +139,8 @@ export const routes: Routes = [
         component: OfferSelectionComponent,
         children: [
             {
-                path: 'catalog',
-                component: OfferSelectionCatalogFormComponent
-            },
-            {
-                path: 'campaign',
-                component: OfferSelectionCampaignFormComponent
+                path: '',
+                component: OfferSelectionAreaComponent
             }
         ]
     },
