@@ -59,6 +59,10 @@ export const routes: Routes = [
                         component: CustomerInfoComponent,
                     },
                     {
+                        path: 'info-update',
+                        component: CustomerInfoFormComponent,
+                    },
+                    {
                         path: 'customeraddress',
                         component: CustomerAddressComponent,
                     },
@@ -70,10 +74,7 @@ export const routes: Routes = [
                         path: 'customercontactmedium',
                         component: CustomerContactMediumComponent,
                     },
-                    {
-                        path: 'customerinfo-update',
-                        component: CustomerInfoFormComponent,
-                    },
+                    
                     {
                         path: 'customeraddress-add',
                         component: CustomerInfoAddressAddFormComponent,

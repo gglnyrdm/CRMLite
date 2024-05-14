@@ -1,5 +1,5 @@
 <p class="title">Customer Info 
-    <i class="fa-solid fa-pencil" type="button" routerLink="/customerinfo-update"></i>
+    <i class="fa-solid fa-pencil" type="button" (click)="updateCustomerInfo()" ></i>
     <i class="fa-regular fa-trash-can"></i>
 </p>
 <div class="container">
@@ -14,6 +14,7 @@
                     </div>
                     <div class="input-area">
                         <span>Gender: {{gender}}</span>
+                        <div></div>
                     </div>
                     <div class="input-area">
                         <span>Mother Name: {{customerInfo.motherName}} </span>

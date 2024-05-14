@@ -1,13 +1,10 @@
-export interface PostCustomerResponse {
-    id: string;
-    customerId: string;
+export interface PutCustomerResponse {
     firstName: string;
     middleName: string;
     lastName: string;
     gender: boolean;
+    birthDate: Date;
     motherName: string;
     fatherName: string;
-    birthDate: Date | null;
     nationalityIdentity: string;
   }
-  

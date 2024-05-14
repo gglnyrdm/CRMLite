@@ -33,7 +33,7 @@ import { switchMap } from 'rxjs';
 })
 export class ContactCustomerFormComponent {
 
-  customerIdFromFirstReq: number;
+  customerIdFromFirstReq: string;
 
   formContactMedium:FormGroup; 
   constructor(
@@ -101,6 +101,7 @@ makeRequests(){
           street: addressFromState.street,
           addressDescription: addressFromState.addressDescription,
         }
+        debugger;
         return this.addressApiService.post(newAddress).pipe(
           switchMap(response2 => {
             let contactMedium: PostContactMediumRequest = {
@@ -110,12 +111,13 @@ makeRequests(){
               fax: this.formContactMedium.value.fax,
               customerId: this.customerIdFromFirstReq,
             }
+            debugger;
             return this.contactMediumApiService.post(contactMedium);
           })
         );
     })).subscribe({
       next: () => {
-    this.router.navigate([`/customerinfo/${this.customerIdFromFirstReq}`])
+    this.router.navigate([`/customer/${this.customerIdFromFirstReq}/info`])
       },
       error: (err) => {
        console.log(err); 

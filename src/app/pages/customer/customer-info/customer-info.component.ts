@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CustomerApiService } from '../../../features/customers/services/customerApi.service';
 import { GetCustomerResponse } from '../../../features/customers/models/responses/customer/get-customer-response';
 
@@ -11,6 +11,7 @@ import { GetCustomerResponse } from '../../../features/customers/models/response
   styleUrl: './customer-info.component.scss'
 })
 export class CustomerInfoComponent {
+
 customerId!: number;
 customerInfo!: GetCustomerResponse;
 gender:string;
@@ -18,7 +19,8 @@ gender:string;
   constructor(
   private customerApiService: CustomerApiService,
   private change: ChangeDetectorRef,
-  private activatedRoute: ActivatedRoute
+  private activatedRoute: ActivatedRoute,
+  private router:Router
   ){}
 
   ngOnInit(): void {
@@ -34,17 +36,20 @@ gender:string;
   getCustomerInfo(){
     this.customerApiService.getById(this.customerId).subscribe({
       next: (customerDetails) => {
+        debugger;
         this.customerInfo = customerDetails;
         console.log(customerDetails)
       },
       complete: () => {
         this.change.markForCheck();
         this.getGender();
-       
       }
     })
   }
 
+  updateCustomerInfo(){
+    this.router.navigate([`/customer/${this.customerId}/info-update`])
+  }
   getGender() {
     if(this.customerInfo.gender == true) {
       this.gender = 'Female';

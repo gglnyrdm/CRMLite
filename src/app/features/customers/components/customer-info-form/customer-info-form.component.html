@@ -10,14 +10,14 @@
                         </div>
                         <div class="input-area">
                             <span>Last Name</span>
-                            <input type="text">
+                            <input type="text" formControlName="lastName">
                         </div>
                         <div class="input-area">
                             <span>Gender</span>
                             <select class="form-select" aria-label="Default select example" formControlName="gender">
                             <option hidden> </option>
-                            <option value="1">Female</option>
-                            <option value="2">Male</option>
+                            <option value="true">Female</option>
+                            <option value="false">Male</option>
                         </select>
                         </div>
                         <div class="input-area">
@@ -42,11 +42,11 @@
                         <input type="text" formControlName="fatherName">
                         </div>
                         <div class="input-area">
-                            <span>Nationality ID</span>
-                        <input type="text" formControlName="nationalityId">
+                        <span>Nationality ID</span>
+                        <input type="text" formControlName="nationalityIdentity">
                         </div>
                         <div class="buttons">
-                        <button class="save-button" type="submit">Cancel</button>
+                        <button class="save-button"(click)="goPrevious()">Cancel</button>
                         <button class="cancel-button" type="submit">Save</button>
                     </div>
                 </div>
