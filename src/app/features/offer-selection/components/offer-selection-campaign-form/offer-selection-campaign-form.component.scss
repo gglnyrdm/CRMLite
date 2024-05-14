@@ -1,0 +1,61 @@
+.campaign-area {
+  width: 100%;
+  padding: 1rem;
+}
+
+.input-area input,
+.select-area select {
+  border: 2px solid rgba(245, 130, 32, 0.6);
+  width: 250px;
+  height: 35px;
+  border-radius: 5px;
+}
+label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: rgba(36, 36, 65, 1);
+}
+.input-area,
+.select-area,
+.button-area,
+.table-area {
+  margin: 1rem;
+}
+
+.button-area button {
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(245, 130, 32, 0.6);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 18.15px;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 1.4rem;
+}
+table {
+  text-align: center;
+  width: 98%;
+}
+
+table input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+tbody {
+  display: block;
+  width: 100%; /* İstenen genişlik */
+  height: 150px; /* İstenen yükseklik */
+  overflow-y: auto; /* Yalnızca dikey kaydırma çubuğu */
+  overflow-x: hidden;
+}
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* Tablonun genişliğini sabitler */
+}

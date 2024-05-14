@@ -12,10 +12,15 @@
 }
 label {
   display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: rgba(36, 36, 65, 1);
 }
 .input-area,
 .select-area,
-.button-area {
+.button-area,
+.table-area {
   margin: 1rem;
 }
 
@@ -31,8 +36,14 @@ label {
   color: rgba(255, 255, 255, 1);
   margin-top: 1.4rem;
 }
-table{
-    text-align: center;
+table {
+  text-align: center;
+  width: 98%;
+}
+
+table input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
 }
 
 tbody {
@@ -47,9 +58,4 @@ tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed; /* Tablonun genişliğini sabitler */
-}
-
-th, td {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
 }
