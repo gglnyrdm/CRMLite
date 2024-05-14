@@ -1,6 +1,6 @@
 export interface SearchCustomerResponse {
     customerId: string;
-    nationalityIdentitynationalityIdentity: string;
+    nationalityIdentity: string;
     accountNumber: string;
     mobilePhone: string;
     firstName: string;

@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { log } from 'console';
 import { OnlyNumberInputDirective } from '../../../../../core/directives/only-number-input.directive';
 import { OnlyLetterDirective } from '../../../../../core/directives/only-letter.directive';
 import { SearchCustomerRequest } from '../../../models/requests/search/search-customer-request';
 import { SearchCustomerApiService } from '../../../services/searchCustomerApi.service';
+import { SearchCustomerResponse } from '../../../models/responses/search/search-customer-response';
 
 
 @Component({
@@ -23,6 +24,9 @@ import { SearchCustomerApiService } from '../../../services/searchCustomerApi.se
 })
 export class SearchFilterComponent {
   @ViewChild('searchButton') searchButton!: ElementRef;
+
+  @Output() customerList = new EventEmitter<SearchCustomerResponse[]>();
+  customers: any = [];
 
   isDisabledSearchButton: boolean = true; //SearchButton template binding
   isDisabledClearButton: boolean = true; //ClearButton template binding
@@ -91,7 +95,9 @@ export class SearchFilterComponent {
     const queryString = queryParams.join('&');
 
     this.searchCustomerApiService.getBySearchFilter(queryString).subscribe(response => {
-    console.log("dasyudgasyujdgaukds",response);
+      this.customers = response;
+      this.customerList.emit(this.customers);
+    console.log(response);
   })
   }
 

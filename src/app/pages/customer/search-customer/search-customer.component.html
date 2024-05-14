@@ -2,10 +2,10 @@
 <div class="search-customer-content">
     <div class="row">
         <div class="col-md-3">
-            <app-search-filter></app-search-filter>
+            <app-search-filter (customerList)="receiveSearchResults($event)"></app-search-filter>
         </div>
         <div class=" content-area col-md-9">
-            <app-search-results></app-search-results>
+            <app-search-results [customerList]="customerList"></app-search-results>
         </div>
     </div>
 </div>

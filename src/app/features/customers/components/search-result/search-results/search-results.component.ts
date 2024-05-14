@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { SearchCustomerResponse } from '../../../models/responses/search/search-customer-response';
 
 @Component({
   selector: 'app-search-results',
@@ -11,4 +12,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './search-results.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchResultsComponent { }
+export class SearchResultsComponent { 
+  @Input() customerList: SearchCustomerResponse[] = [];
+
+  constructor(
+    private change: ChangeDetectorRef,
+  ) {}
+
+  ngOnInit():void{
+    this.change.markForCheck();
+  }
+
+}
