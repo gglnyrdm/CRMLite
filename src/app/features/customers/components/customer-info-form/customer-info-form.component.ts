@@ -20,7 +20,7 @@ import { PutCustomerRequest } from '../../models/requests/customer/put-customer-
 export class CustomerInfoFormComponent {
 
 
-  customerId!: number;
+  customerId!: string;
   customerInfo!: GetCustomerResponse;
   form:FormGroup;
   gender:string;

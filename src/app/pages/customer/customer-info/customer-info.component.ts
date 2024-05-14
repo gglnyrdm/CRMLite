@@ -12,7 +12,7 @@ import { GetCustomerResponse } from '../../../features/customers/models/response
 })
 export class CustomerInfoComponent {
 
-customerId!: number;
+customerId!: string;
 customerInfo!: GetCustomerResponse;
 gender:string;
 

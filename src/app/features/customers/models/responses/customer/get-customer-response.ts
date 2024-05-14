@@ -1,5 +1,6 @@
 export interface GetCustomerResponse {
     id: number;
+    customerId:string,
     firstName: string;
     middleName: string;
     lastName: string;

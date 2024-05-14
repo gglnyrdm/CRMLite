@@ -24,13 +24,13 @@ export class CustomerApiService {
     );
   }
 
-  putCustomer(id: number, customer: PutCustomerRequest): Observable<PutCustomerResponse>{
+  putCustomer(id: string, customer: PutCustomerRequest): Observable<PutCustomerResponse>{
     debugger;
     return this.http.put<PutCustomerResponse>
     (`http://localhost:8081/api/v1/individualCustomers/${id}`,customer)
   }
 
-  getById(id: number): Observable<GetCustomerResponse> {
+  getById(id: string): Observable<GetCustomerResponse> {
     return this.http.get<GetCustomerResponse>(`http://localhost:8081/api/v1/individualCustomers/${id}`)
   }
 }

@@ -34,6 +34,7 @@ import { switchMap } from 'rxjs';
 export class ContactCustomerFormComponent {
 
   customerIdFromFirstReq: string;
+  induvidualCustomerId:string;
 
   formContactMedium:FormGroup; 
   constructor(
@@ -93,9 +94,10 @@ makeRequests(){
     debugger;
   this.customerApiService.postCustomer(customerFromState).pipe(
     switchMap( response1 => {
-        this.customerIdFromFirstReq = response1.id;
+        this.customerIdFromFirstReq = response1.customerId;
+        this.induvidualCustomerId=response1.id;
         let newAddress: PostAddressRequest = {
-          customerId: response1.id,
+          customerId: response1.customerId,
           cityId: addressFromState.cityId,
           houseFlatNumber: addressFromState.houseFlatNumber,
           street: addressFromState.street,
@@ -117,7 +119,7 @@ makeRequests(){
         );
     })).subscribe({
       next: () => {
-    this.router.navigate([`/customer/${this.customerIdFromFirstReq}/info`])
+    this.router.navigate([`/customer/${this.induvidualCustomerId}/info`])
       },
       error: (err) => {
        console.log(err); 
