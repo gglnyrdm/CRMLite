@@ -19,7 +19,7 @@ export class SearchResultsComponent {
     private change: ChangeDetectorRef,
   ) {}
 
-  ngOnInit():void{
+  ngOnChanges():void{
     this.change.markForCheck();
   }
 

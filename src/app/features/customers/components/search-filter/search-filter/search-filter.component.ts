@@ -58,7 +58,6 @@ export class SearchFilterComponent {
   }
 
   createSearchCustomerRequest() {
-    debugger;
     const queryParams: string[] = [];
     if(this.form.get('idNumber').value != '')
       {

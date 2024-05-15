@@ -1,12 +1,27 @@
 <p class="search-results-title">Search Results</p>
 <div class="search-results-container">
-
-    <tr *ngFor="let customer of customerList">
-        <td class="cursor">{{ customer.customerId }}</td>
-        <td>{{ customer.firstName}}</td>
-        <td>{{ customer.lastName }}</td>
-        <td>{{customer.nationalityIdentity}}</td>
-        <td>{{customer.accountNumber}}</td>
-        <td>{{customer.mobilePhone}}</td>
+<div class="customer-list" *ngIf="customerList.length >0">
+  <table class="customer-list-table">
+    <thead class="table-head">
+      <tr>
+        <th scope="col">Customer ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Second Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Role</th>
+        <th scope="col">ID Number</th>
       </tr>
+    </thead>
+    <tbody class="table-body">
+      <tr *ngFor="let customer of customerList">
+        <td><u>{{ customer.customerId }}</u></td>
+        <td>{{ customer.firstName}}</td>
+        <td>middlename</td>
+        <td>{{ customer.lastName }}</td>
+        <td>Customer</td>
+        <td>{{customer.nationalityIdentity}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 </div>
