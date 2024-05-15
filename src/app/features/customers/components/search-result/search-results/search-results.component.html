@@ -1,5 +1,23 @@
 <p class="search-results-title">Search Results</p>
 <div class="search-results-container">
+  <div class="customer-not-found">
+    
+    <p class="p1">No customer found!</p>
+    <p class="p2">Please check the information you entered and search again</p>
+    <p class="p3">OR</p>
+
+    <div class="row">
+      <div class="col-md-6">
+        <p class="p4">Would you like the</p>
+        <p class="p5">to create customer?</p>
+      </div>
+      <div class="col-md-6">
+        <button>CREATE CUSTOMER</button>
+      </div>
+    </div>
+  </div>
+
+</div>
 <div class="customer-list" *ngIf="customerList.length >0">
   <table class="customer-list-table">
     <thead class="table-head">
@@ -23,5 +41,4 @@
       </tr>
     </tbody>
   </table>
-</div>
 </div>

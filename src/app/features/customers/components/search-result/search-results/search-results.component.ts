@@ -22,5 +22,4 @@ export class SearchResultsComponent {
   ngOnChanges():void{
     this.change.markForCheck();
   }
-
 }
