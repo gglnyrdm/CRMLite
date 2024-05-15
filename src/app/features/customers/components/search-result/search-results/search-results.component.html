@@ -1,7 +1,8 @@
 <p class="search-results-title">Search Results</p>
 <div class="search-results-container">
-  <div class="customer-not-found">
-    
+  <div class="customer-not-found" 
+  [ngClass]="{'customer-list-visible':showCustomerList && customerList.length==0, 'customer-list-hidden':customerList.length > 0 }" 
+  *ngIf="showCustomerList && customerList.length==0">
     <p class="p1">No customer found!</p>
     <p class="p2">Please check the information you entered and search again</p>
     <p class="p3">OR</p>
@@ -17,28 +18,28 @@
     </div>
   </div>
 
-</div>
-<div class="customer-list" *ngIf="customerList.length >0">
-  <table class="customer-list-table">
-    <thead class="table-head">
-      <tr>
-        <th scope="col">Customer ID</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Second Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Role</th>
-        <th scope="col">ID Number</th>
-      </tr>
-    </thead>
-    <tbody class="table-body">
-      <tr *ngFor="let customer of customerList">
-        <td><u>{{ customer.customerId }}</u></td>
-        <td>{{ customer.firstName}}</td>
-        <td>middlename</td>
-        <td>{{ customer.lastName }}</td>
-        <td>Customer</td>
-        <td>{{customer.nationalityIdentity}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="customer-list" *ngIf="customerList.length > 0">
+    <table class="customer-list-table">
+      <thead class="table-head">
+        <tr>
+          <th scope="col">Customer ID</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Second Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Role</th>
+          <th scope="col">ID Number</th>
+        </tr>
+      </thead>
+      <tbody class="table-body">
+        <tr *ngFor="let customer of customerList">
+          <td><u>{{ customer.customerId }}</u></td>
+          <td>{{ customer.firstName}}</td>
+          <td>middlename</td>
+          <td>{{ customer.lastName }}</td>
+          <td>Customer</td>
+          <td>{{customer.nationalityIdentity}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -14,12 +14,21 @@ import { SearchCustomerResponse } from '../../../models/responses/search/search-
 })
 export class SearchResultsComponent { 
   @Input() customerList: SearchCustomerResponse[] = [];
+  showCustomerList: boolean = false;
 
   constructor(
     private change: ChangeDetectorRef,
   ) {}
 
+  ngOnInit():void {
+    this.showCustomerList =false;
+  }
+
   ngOnChanges():void{
     this.change.markForCheck();
+    if(this.customerList.length==0)
+      {
+        this.showCustomerList = true;
+      }
   }
 }

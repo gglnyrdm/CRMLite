@@ -1,4 +1,5 @@
 .search-results-container{
+  position: relative;
   width: 96.5%;
   height: 100%;
   border: 2px solid #242441;
@@ -7,7 +8,6 @@
 }
 
 .customer-not-found{
-  position: relative;
   padding: 2.5rem;
   text-align: center;
   p{  
@@ -86,4 +86,12 @@ button {
   color: black;
   text-align: center;
   }
+}
+
+.customer-list-visible {
+  display: block;
+}
+
+.customer-list-hidden {
+  display: none;
 }
