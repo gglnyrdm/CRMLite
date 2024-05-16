@@ -1,0 +1,89 @@
+.address-info-title{
+    margin-bottom: 0.5rem;
+    padding-left: 2.4rem;
+    margin-top: 1.5rem; 
+    font-size: 0.8rem;
+    font-weight: 400;
+    border-bottom: 1px solid #F5822099;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    width: calc(98.4% - 8.2rem - 20px);
+    margin-left: 5.8rem;
+}
+
+.select-address-text {
+    margin-bottom: 0.5rem;
+    padding-left: 6rem;
+    margin-top: 1.5rem; 
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.col-info {
+    border: 1px solid rgba(245, 130, 32, 0.6);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 251px;
+    height: 121px;
+    top: 824px;
+    left: 43px;
+    margin-left: 6.5rem;
+    margin-top: 0.6rem;
+}
+
+.col-add-address {
+    border: 1px solid rgba(245, 130, 32, 0.6);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-left: 2rem;
+    margin-top: 0.6rem;
+    margin-bottom: 2rem;
+    width: 174px;
+    height: 121px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-section-title{
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 0.6rem;
+}
+
+.add-address-btn {
+    width: 120px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid rgba(245, 130, 32, 0.6);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 29.05px;
+}
+
+.button-section {
+    padding-left: 7rem;
+}
+
+.previous-btn {
+    background-color: rgba(245, 130, 32, 0.8);
+  color: rgba(255, 255, 255, 1);
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.73px;
+}
+
+.next-btn {
+    background-color: rgba(245, 130, 32, 0.8);
+  color: rgba(255, 255, 255, 1);
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.73px;
+  margin-left: 35rem;
+}
