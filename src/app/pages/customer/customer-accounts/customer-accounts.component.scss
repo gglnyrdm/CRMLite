@@ -77,7 +77,7 @@ td {
   border-radius: 10px;
   background-color: rgba(245, 130, 32, 0.6);
   border: none;
-  margin-right: 1rem;;
+  margin-right: 1rem;
   //
   font-size: 14px;
   font-weight: 700;
@@ -89,4 +89,10 @@ i {
   color: rgba(245, 130, 32, 1);
   font-size: 1.4rem;
   padding: 1rem;
+}
+
+td i {
+  color: rgba(0, 0, 0, 1);
+  font-size:1rem;
+  padding: 0 0.4rem;
 }
