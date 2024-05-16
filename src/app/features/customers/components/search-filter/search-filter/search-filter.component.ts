@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { log } from 'console';
 import { OnlyNumberInputDirective } from '../../../../../core/directives/only-number-input.directive';
 import { OnlyLetterDirective } from '../../../../../core/directives/only-letter.directive';
 import { SearchCustomerRequest } from '../../../models/requests/search/search-customer-request';
 import { SearchCustomerApiService } from '../../../services/searchCustomerApi.service';
 import { SearchCustomerResponse } from '../../../models/responses/search/search-customer-response';
+import { CustomerIdDirective } from '../../../../../core/directives/customer-id.directive';
 
 
 @Component({
@@ -16,7 +16,8 @@ import { SearchCustomerResponse } from '../../../models/responses/search/search-
     CommonModule,
     ReactiveFormsModule,
     OnlyNumberInputDirective,
-    OnlyLetterDirective
+    OnlyLetterDirective,
+    CustomerIdDirective
   ],
   templateUrl: './search-filter.component.html',
   styleUrl: './search-filter.component.scss',
@@ -45,6 +46,11 @@ export class SearchFilterComponent {
       this.isDisabledClearButton = this.isFormEmpty();
     });
   }
+  ngOnChange():void {
+    
+  }
+
+  
   createForm() {
     this.form =this.fb.group({
       idNumber: new FormControl(''),
@@ -106,7 +112,6 @@ export class SearchFilterComponent {
     const formValues = this.form.value;
     for (const key in formValues) {
       if (formValues[key]) {
-        
         return false;
       }
     }

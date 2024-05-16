@@ -18,7 +18,7 @@ import { PutCustomerRequest } from '../../models/requests/customer/put-customer-
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomerInfoFormComponent {
-
+  
 
   customerId!: string;
   customerInfo!: GetCustomerResponse;
@@ -34,7 +34,6 @@ export class CustomerInfoFormComponent {
         this.gender = 'Male';
       }
   }
-
 
   constructor(
     private fb:FormBuilder,
@@ -60,10 +59,12 @@ export class CustomerInfoFormComponent {
       next: (customerDetails) => {
         this.customerInfo = customerDetails;
         console.log(customerDetails)
+
       },
       complete: () => {
-        this.change.markForCheck();
-        this.createForm();
+    this.createForm();
+        
+
       }
     })
   }

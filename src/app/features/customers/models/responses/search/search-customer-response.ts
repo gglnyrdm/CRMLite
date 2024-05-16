@@ -6,5 +6,6 @@ export interface SearchCustomerResponse {
     firstName: string;
     lastName: string;
     orderNumber: string;
+    middleName:string;
   }
   
