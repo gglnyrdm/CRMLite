@@ -3,27 +3,33 @@ header {
   left: 0;
   width: 100%;
   height: 8.75rem;
-  background: linear-gradient(90.11deg, #242441 43.26%, #2A2A4B 72.75%, #505090 107.63%, #363661 107.63%);
+  background: linear-gradient(
+    90.11deg,
+    #242441 43.26%,
+    #2a2a4b 72.75%,
+    #505090 107.63%,
+    #363661 107.63%
+  );
   display: flex;
 }
 
 .left-side {
-position: relative;
-top: 1rem;
-width: 80%;
-height: 80%;
-border-right:2px solid #F5822099;
-// background-color: red;
-margin: 0;
+  position: relative;
+  top: 1rem;
+  width: 70%;
+  height: 80%;
+  // border-right:2px solid #F5822099;
+  // background-color: red;
+  margin: 0;
 }
 
-.etiya-logo-area{
+.etiya-logo-area {
   position: relative;
   top: 0.6rem;
   max-width: 25.5rem;
   // background-color: blue;
   padding: 0.1rem;
-  img{
+  img {
     display: flex;
     align-items: center;
     max-width: 25rem;
@@ -32,7 +38,7 @@ margin: 0;
     margin: 0;
     opacity: 0.9;
   }
-  img:hover{
+  img:hover {
     display: flex;
     align-items: center;
     max-width: 25rem;
@@ -50,20 +56,21 @@ margin: 0;
   width: 20%;
   height: 70%;
   display: flex;
-  img{
+  border-left: 2px solid #f5822099;
+  img {
     position: relative;
-    top:1rem;
+    top: 1rem;
     max-width: 2.8rem;
-    max-height:3.87rem;
+    max-height: 3.87rem;
     margin-left: 1rem;
     opacity: 0.9;
     // background-color: purple;
   }
   img:hover {
     position: relative;
-    top:1rem;
+    top: 1rem;
     max-width: 2.8rem;
-    max-height:3.87rem;
+    max-height: 3.87rem;
     margin-left: 1rem;
     opacity: 1;
   }
@@ -75,25 +82,59 @@ margin: 0;
   height: 4.8rem;
   // background-color: red;
 
-  p{
+  p {
     position: relative;
     display: inline-block;
     // background-color: orange;
-    top:60%;
+    top: 60%;
     left: 9%;
     font-weight: 700;
     font-size: 1.75rem;
-    color: #FFFFFF;
+    color: #ffffff;
     line-height: 2.1rem;
   }
 }
 
+.information-side {
+  position: relative;
+  // background-color: aqua;
+  top: 1.5rem;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid #f5822099;
+  text-align: left;
+  p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+  }
+  //
+}
+
+.language-information-side {
+  position: relative;
+  top: 1.5rem;
+  height: 70%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 20px;
+  p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+  }
+  //
+}
+
 @media only screen and (max-width: 600px) {
-  
- 
   .left-side {
-      left: 10%;
-      border:none
+    left: 10%;
+    border: none;
   }
   .user-information-side {
     visibility: hidden;
