@@ -5,27 +5,35 @@
                 <div class="left-side">
                         <div class="input-area">
                             <span>Email*</span>
-                            <input appEmailFormat type="email" formControlName="email" maxlength="250">
+                            <input class="input-email" appEmailFormat type="email" formControlName="email" maxlength="250">
                         </div>
                         <div class="input-area">
                             <span>Mobile Phone*</span>
-                            <input type="text" appOnlyNumberInput formControlName="mobilePhone" maxlength="12">
+                            <span class="country-code">+90</span>
+                            <input class="input-mobile-phone"  [ngClass]="{ 'red-border': showMobilePhoneWarning }" type="text" appOnlyNumberInput formControlName="mobilePhone" maxlength="10">
+                            <p class="warning-message"*ngIf="showMobilePhoneWarning">Please enter valid phone number.</p>
                         </div>
-                        <button class="cancel-button" (click)="goPrevious()">Previous</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="right-side">
                         <div class="input-area">
                         <span>Home Phone</span>
-                        <input type="text" appOnlyNumberInput formControlName="homePhone" maxlength="12">
+                        <span class="country-code">+90</span>
+                        <input type="text" appOnlyNumberInput formControlName="homePhone" maxlength="10">
                         </div>
                         <div class="input-area">
                             <span>Fax</span>
-                            <input type="text" appOnlyNumberInput formControlName="fax" maxlength="12">
+                            <span class="fax-country-code">+90</span>
+                            <input type="text" appOnlyNumberInput formControlName="fax" maxlength="10">
                         </div>
-                        <button class="next-button"  type="submit">Create</button>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button class="cancel-button" (click)="goPrevious()">Previous</button>
+                <button class="next-button"  type="submit"  [disabled]="!formContactMedium.valid"  [ngStyle]="{'background-color': !formContactMedium.valid ? '#E0E0E0' : '#F5822099'}">Create</button>
             </div>
         </div>
     </div>

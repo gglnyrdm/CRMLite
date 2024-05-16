@@ -11,14 +11,26 @@ span {
     height: 2rem;
     border: 2px solid #F5822099;
     border-radius: 0.6rem;
-    float: right;
+  }
+  
+  .country-code{
+    margin-left: 2rem;
+    margin-right: 0.3rem;
+  }
+
+  .input-email{
+    margin-left: 8.7rem;
   }
 
   .input-area {
     position: relative;
     margin-bottom: 5rem;
-    width: 30rem;
-    
+    width: 40rem;
+  }
+
+  .fax-country-code{
+    margin-left: 7.2rem;
+    margin-right: 0.3rem;
   }
   
   .form-select {
@@ -41,7 +53,6 @@ span {
   
   .right-side {
     position: relative;
-    margin-left: 5rem;
     width: 100%;
   }
   
@@ -49,7 +60,8 @@ span {
   .next-button {
     position: relative;
     display: flex;
-    left: 70%;
+    left: 75%;
+    bottom: 60%;
     align-items: center;
     justify-content: center;
     color: white;
@@ -77,4 +89,12 @@ span {
     font-size: 1rem;
   }
 
+  .warning-message {
+    margin-top: 0.5rem;
+    margin-left: 12.5rem;
+    font-size: 0.8rem;
+  }
  
+  .red-border{
+    border: 2px solid red;
+  }

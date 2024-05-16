@@ -36,6 +36,10 @@ export class ContactCustomerFormComponent {
   customerIdFromFirstReq: string;
   induvidualCustomerId:string;
 
+  showMobilePhoneWarning: boolean = false;
+
+  isFormValid: boolean = false;
+
   formContactMedium:FormGroup; 
   constructor(
     private fb:FormBuilder,
@@ -51,19 +55,33 @@ export class ContactCustomerFormComponent {
       console.log(contactMedium)
       this.formContactMedium.patchValue(contactMedium);
     });
+
+    this.formContactMedium.valueChanges.subscribe(() => {
+    this.isFormValid = this.formContactMedium.valid;
+  });
   }
+
+  
 
   createForm(){
     this.formContactMedium = this.fb.group({
-      email: new FormControl('',[Validators.required]), //,Validators.maxLength(250)
-      mobilePhone: new FormControl('+90',[Validators.required]),
-      homePhone: new FormControl('+90'), //,Validators.maxLength(10)
-      fax: new FormControl('+90'),
+      email: new FormControl('',[Validators.required,Validators.email,Validators.maxLength(250)]), 
+      mobilePhone: new FormControl('',[Validators.required,Validators.maxLength(10)]),
+      homePhone: new FormControl('',[Validators.maxLength(10)]),
+      fax: new FormControl('',[Validators.maxLength(10)]),
     });
   }
 
   onSubmitForm() {
-    this.makeRequests();
+    debugger;
+    if(this.formContactMedium.value.mobilePhone.length <10)
+      {
+        this.showMobilePhoneWarning = true;
+      }
+      else{
+        this.makeRequests();
+      }
+    
 }
 
 goPrevious() {
