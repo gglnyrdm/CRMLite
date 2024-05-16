@@ -22,6 +22,7 @@ import { CreateBillingAccountFormComponent } from './features/billing-account/co
 import { UpdateBillingAccountFormComponent } from './features/billing-account/components/update-billing-account-form/update-billing-account-form.component';
 import { OfferSelectionAreaComponent } from './features/offer-selection/components/offer-selection-area/offer-selection-area.component';
 import { ConfigurationProductComponent } from './pages/offer-selection/components/configuration-product/configuration-product.component';
+import { SubmitOrderComponent } from './pages/offer-selection/components/submit-order/submit-order.component';
 
 export const routes: Routes = [
 
@@ -148,5 +149,9 @@ export const routes: Routes = [
     {
         path: 'configuration-product',
         component: ConfigurationProductComponent
+    },
+    {
+        path: 'submit-order',
+        component: SubmitOrderComponent
     }
 ];

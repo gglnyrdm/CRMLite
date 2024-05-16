@@ -1,0 +1,53 @@
+.order-info {
+    display: flex;
+    margin-left: -13rem;
+    margin-top: 2rem;
+}
+
+.info-label {
+    margin-right: 8rem;
+}
+
+.order-items {
+    display: flex;
+    margin-left: -13rem;
+    margin-top: 2rem;
+}
+
+.items-label {
+    margin-right: 8rem;
+}
+
+.service-address {
+    display: flex;
+    margin-left: -13rem;
+    margin-top: 2rem;
+}
+
+.address-left {
+    margin-right: 8rem;
+}
+
+.total-amount {
+    display: flex;
+    margin-left: -13rem;
+    margin-top: 2rem;
+}
+
+.amount-left {
+    margin-right: 8rem;
+}
+
+.submit-order-title {
+    margin-left: -13rem;
+    margin-top: 2rem;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 2.42rem;
+    color: rgba(36, 36, 65, 1);
+}
+
+.button-section {
+    margin-top: 7rem;
+}
+
