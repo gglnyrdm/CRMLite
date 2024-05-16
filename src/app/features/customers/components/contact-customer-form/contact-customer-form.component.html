@@ -20,12 +20,14 @@
                         <div class="input-area">
                         <span>Home Phone</span>
                         <span class="country-code">+90</span>
-                        <input type="text" appOnlyNumberInput formControlName="homePhone" maxlength="10">
+                        <input [ngClass]="{ 'red-border': showHomePhoneWarning }" type="text" appOnlyNumberInput formControlName="homePhone" maxlength="10">
+                        <p class="warning-message"*ngIf="showHomePhoneWarning">Please enter valid phone number.</p>
                         </div>
                         <div class="input-area">
                             <span>Fax</span>
                             <span class="fax-country-code">+90</span>
-                            <input type="text" appOnlyNumberInput formControlName="fax" maxlength="10">
+                            <input [ngClass]="{ 'red-border': showFaxWarning }" type="text" appOnlyNumberInput formControlName="fax" maxlength="10">
+                            <p class="warning-message"*ngIf="showFaxWarning">Please enter valid phone number.</p>
                         </div>
                 </div>
             </div>

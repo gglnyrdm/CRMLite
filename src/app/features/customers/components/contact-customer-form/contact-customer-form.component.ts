@@ -21,12 +21,12 @@ import { switchMap } from 'rxjs';
   selector: 'app-contact-customer-form',
   standalone: true,
   imports: [
-    CommonModule, 
+    CommonModule,
     ReactiveFormsModule,
     OnlyNumberInputDirective,
     RouterModule,
     EmailFormatDirective
-    ],
+  ],
   templateUrl: './contact-customer-form.component.html',
   styleUrl: './contact-customer-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,22 +34,24 @@ import { switchMap } from 'rxjs';
 export class ContactCustomerFormComponent {
 
   customerIdFromFirstReq: string;
-  induvidualCustomerId:string;
+  induvidualCustomerId: string;
 
   showMobilePhoneWarning: boolean = false;
+  showHomePhoneWarning: boolean = false;
+  showFaxWarning: boolean = false;
 
   isFormValid: boolean = false;
 
-  formContactMedium:FormGroup; 
+  formContactMedium: FormGroup;
   constructor(
-    private fb:FormBuilder,
+    private fb: FormBuilder,
     private customerApiService: CustomerApiService,
     private contactMediumApiService: ContactMediumApiService,
     private addressApiService: AddressApiService,
-    private store:Store<{contactMedium:PostContactMediumRequest}>,
-    private router:Router
-  ){}
-  ngOnInit():void {
+    private store: Store<{ contactMedium: PostContactMediumRequest }>,
+    private router: Router
+  ) { }
+  ngOnInit(): void {
     this.createForm();
     this.store.pipe(select(selectContactMedium)).subscribe((contactMedium) => {
       console.log(contactMedium)
@@ -57,72 +59,105 @@ export class ContactCustomerFormComponent {
     });
 
     this.formContactMedium.valueChanges.subscribe(() => {
-    this.isFormValid = this.formContactMedium.valid;
-  });
+      this.isFormValid = this.formContactMedium.valid;
+    });
   }
-
-  
-
-  createForm(){
+  createForm() {
     this.formContactMedium = this.fb.group({
-      email: new FormControl('',[Validators.required,Validators.email,Validators.maxLength(250)]), 
-      mobilePhone: new FormControl('',[Validators.required,Validators.maxLength(10)]),
-      homePhone: new FormControl('',[Validators.maxLength(10)]),
-      fax: new FormControl('',[Validators.maxLength(10)]),
+      email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(250)]),
+      mobilePhone: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      homePhone: new FormControl('', [Validators.maxLength(10)]),
+      fax: new FormControl('', [Validators.maxLength(10)]),
     });
   }
 
   onSubmitForm() {
     debugger;
-    if(this.formContactMedium.value.mobilePhone.length <10)
-      {
-        this.showMobilePhoneWarning = true;
-      }
-      else{
-        this.makeRequests();
-      }
-    
-}
+    if (this.formContactMedium.value.mobilePhone.length < 10 &&
+      (this.formContactMedium.value.fax.length > 0 && this.formContactMedium.value.fax.length < 10) &&
+      (this.formContactMedium.value.homePhone.length > 0 && this.formContactMedium.value.homePhone.length < 10)) {
+      this.showHomePhoneWarning = true;
+      this.showMobilePhoneWarning = true;
+      this.showFaxWarning = true;
+    }
+    else if (this.formContactMedium.value.mobilePhone.length < 10 &&
+      (this.formContactMedium.value.fax.length > 0 && this.formContactMedium.value.fax.length < 10)
+    ) {
+      this.showMobilePhoneWarning = true;
+      this.showFaxWarning = true;
+      this.showHomePhoneWarning = false;
+    }
+    else if (this.formContactMedium.value.mobilePhone.length < 10 &&
+      (this.formContactMedium.value.homePhone.length > 0 && this.formContactMedium.value.homePhone.length < 10)
+    ) {
+      this.showMobilePhoneWarning = true;
+      this.showHomePhoneWarning = true;
+      this.showFaxWarning = false;
+    }
+    else if ((this.formContactMedium.value.homePhone.length > 0 && this.formContactMedium.value.homePhone.length < 10) &&
+      (this.formContactMedium.value.fax.length > 0 && this.formContactMedium.value.fax.length < 10)
+    ) {
+      this.showMobilePhoneWarning = false;
+      this.showHomePhoneWarning = true;
+      this.showFaxWarning = true;
+    }
+    else if (this.formContactMedium.value.mobilePhone.length < 10) {
+      this.showMobilePhoneWarning = true;
+      this.showHomePhoneWarning = false;
+      this.showFaxWarning = false;
+    }
+    else if (this.formContactMedium.value.fax.length > 0 && this.formContactMedium.value.fax.length < 10) {
+      this.showMobilePhoneWarning = false;
+      this.showHomePhoneWarning = false;
+      this.showFaxWarning = true;
+    }
+    else if (this.formContactMedium.value.homePhone.length > 0 && this.formContactMedium.value.homePhone.length < 10) {
+      this.showHomePhoneWarning = true;
+      this.showMobilePhoneWarning = false;
+      this.showFaxWarning = true;
+    }
+    else {
+      this.makeRequests();
+    }
+  }
 
-goPrevious() {
-  const contactMedium: PostContactMediumRequest = {
-    email: this.formContactMedium.value.email,
-    homePhone: this.formContactMedium.value.homePhone,
-    mobilePhone: this.formContactMedium.value.mobilePhone,
-    fax: this.formContactMedium.value.fax,
-    customerId: null,
-  };
-  this.store.dispatch(setContactMedium({ contactMedium }));
-  this.router.navigate(['/createcustomer/addressinfo']);
-}
+  goPrevious() {
+    const contactMedium: PostContactMediumRequest = {
+      email: this.formContactMedium.value.email,
+      homePhone: this.formContactMedium.value.homePhone,
+      mobilePhone: this.formContactMedium.value.mobilePhone,
+      fax: this.formContactMedium.value.fax,
+      customerId: null,
+    };
+    this.store.dispatch(setContactMedium({ contactMedium }));
+    this.router.navigate(['/createcustomer/addressinfo']);
+  }
 
-makeRequests(){
-  let customerFromState: CreateCustomerRequest;
-  let addressFromState: PostAddressRequest;
-  this.store
-    .pipe(select(selectIndividualCustomer))
-    .subscribe((individualCustomer) => {
-      customerFromState = individualCustomer;
-    });
+  makeRequests() {
+    let customerFromState: CreateCustomerRequest;
+    let addressFromState: PostAddressRequest;
     this.store
-    .pipe(select(selectIndividualCustomerAddress))
-    .subscribe((customerAddress) => {
-      addressFromState = customerAddress;
-    });
-    debugger;
-  this.customerApiService.postCustomer(customerFromState).pipe(
-    switchMap( response1 => {
+      .pipe(select(selectIndividualCustomer))
+      .subscribe((individualCustomer) => {
+        customerFromState = individualCustomer;
+      });
+    this.store
+      .pipe(select(selectIndividualCustomerAddress))
+      .subscribe((customerAddress) => {
+        addressFromState = customerAddress;
+      });
+    this.customerApiService.postCustomer(customerFromState).pipe(
+      switchMap(response1 => {
         this.customerIdFromFirstReq = response1.customerId;
-        this.induvidualCustomerId=response1.id;
+        this.induvidualCustomerId = response1.id;
         let newAddress: PostAddressRequest = {
           customerId: response1.customerId,
           cityId: addressFromState.cityId,
-          cityName:'',
+          cityName: '',
           houseFlatNumber: addressFromState.houseFlatNumber,
           street: addressFromState.street,
           addressDescription: addressFromState.addressDescription,
         }
-        debugger;
         return this.addressApiService.post(newAddress).pipe(
           switchMap(response2 => {
             let contactMedium: PostContactMediumRequest = {
@@ -132,17 +167,16 @@ makeRequests(){
               fax: this.formContactMedium.value.fax,
               customerId: this.customerIdFromFirstReq,
             }
-            debugger;
             return this.contactMediumApiService.post(contactMedium);
           })
         );
-    })).subscribe({
-      next: () => {
-    this.router.navigate([`/customer/${this.induvidualCustomerId}/info`])
-      },
-      error: (err) => {
-       console.log(err); 
-      }
-    });
-}
+      })).subscribe({
+        next: () => {
+          this.router.navigate([`/customer/${this.induvidualCustomerId}/info`])
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+  }
 }
