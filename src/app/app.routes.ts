@@ -136,7 +136,7 @@ export const routes: Routes = [
         component: ContactCustomerComponent
     },
     {
-        path: 'offerseleciton',
+        path: 'offerselection',
         component: OfferSelectionComponent,
         children: [
             {

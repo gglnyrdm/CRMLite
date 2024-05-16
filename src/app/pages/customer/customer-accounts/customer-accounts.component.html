@@ -1,172 +1,222 @@
 <div class="container">
-    <h1>Customer Accounts </h1>
-    <button class="create-new-button" routerLink="/createbillingaccount">Create New Account</button>
-    <div class="customer-head">
-        <div class="row menu">
-            <div class="col">Action Status</div>
-            <div class="col">Action Number</div>
-            <div class="col">Action Name</div>
-            <div class="col">Account Type</div>
-            <div class="col">Action</div>
-        </div>
+  <h1>Customer Accounts</h1>
+  <button class="create-new-button" routerLink="/createbillingaccount">
+    Create New Account
+  </button>
+  <div class="customer-head">
+    <div class="row menu">
+      <div class="col">Action Status</div>
+      <div class="col">Action Number</div>
+      <div class="col">Action Name</div>
+      <div class="col">Account Type</div>
+      <div class="col">Action</div>
     </div>
-    <div class="customer-table" id="accordionExample">
-        <div class="customer-table-head" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-            aria-controls="collapseOne">
-            <div class="row">
-                <div class="col">Active</div>
-                <div class="col">010112911</div>
-                <div class="col">010112911</div>
-                <div class="col">Billing Account</div>
-                <div class="col"><i class="fa-solid fa-xmark"></i> <i routerLink="/updatebillingaccount"
-                        class="fa-solid fa-pencil"></i></div>
-            </div>
+  </div>
+  <div class="customer-table" id="accordionExample">
+    <div
+      class="customer-table-head"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseOne"
+      aria-expanded="true"
+      aria-controls="collapseOne"
+    >
+      <div class="row">
+        <div class="col">Active</div>
+        <div class="col">010112911</div>
+        <div class="col">010112911</div>
+        <div class="col">Billing Account</div>
+        <div class="col">
+          <i class="fa-solid fa-xmark"></i>
+          <i routerLink="/updatebillingaccount" class="fa-solid fa-pencil"></i>
         </div>
+      </div>
+    </div>
 
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample">
-            <div class="customer-table-data table-responsive">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Prod Offer ID</th>
-                            <th scope="col">Product Name Action</th>
-                            <th scope="col">Campaign Name</th>
-                            <th scope="col">Campaign ID</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="col">002</td>
-                            <td scope="col">ADSL 8MB</td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                        </tr>
-                        <tr>
-                            <td scope="col">001</td>
-                            <td scope="col">ADSL 8MB</td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                        </tr>
-                        <tr>
-                            <td scope="col">001</td>
-                            <td scope="col">ADSL 8MB</td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div
+      id="collapseOne"
+      class="accordion-collapse show collapse"
+      aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="customer-table-data table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Prod Offer ID</th>
+              <th scope="col">Product Name Action</th>
+              <th scope="col">Campaign Name</th>
+              <th scope="col">Campaign ID</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="col">002</td>
+              <td scope="col">ADSL 8MB</td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+            </tr>
+            <tr>
+              <td scope="col">001</td>
+              <td scope="col">ADSL 8MB</td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+            </tr>
+            <tr>
+              <td scope="col">001</td>
+              <td scope="col">ADSL 8MB</td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="button-area">
+        <button routerLink="/offerselection">Start New Sales</button>
+        <button>Transfer</button>
+        <button>Service Address Change</button>
+      </div>
     </div>
-    <div class="customer-table" id="accordionExample">
-        <div class="customer-table-head collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-            aria-expanded="false" aria-controls="collapseTwo">
-            <div class="row">
-                <div class="col">Active</div>
-                <div class="col">010112911</div>
-                <div class="col">010112911</div>
-                <div class="col">Billing Account</div>
-                <div class="col"><i class="fa-solid fa-xmark"></i> <i routerLink="/updatebillingaccount"
-                        class="fa-solid fa-pencil"></i></div>
-            </div>
+  </div>
+  <div class="customer-table" id="accordionExample">
+    <div
+      class="customer-table-head collapsed"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseTwo"
+      aria-expanded="false"
+      aria-controls="collapseTwo"
+    >
+      <div class="row">
+        <div class="col">Active</div>
+        <div class="col">010112911</div>
+        <div class="col">010112911</div>
+        <div class="col">Billing Account</div>
+        <div class="col">
+          <i class="fa-solid fa-xmark"></i>
+          <i routerLink="/updatebillingaccount" class="fa-solid fa-pencil"></i>
         </div>
+      </div>
+    </div>
 
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample">
-            <div class="customer-table-data table-responsive">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Prod Offer ID</th>
-                            <th scope="col">Product Name Action</th>
-                            <th scope="col">Campaign Name</th>
-                            <th scope="col">Campaign ID</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="col">002</td>
-                            <td scope="col">ADSL 8MB</td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                        </tr>
-                        <tr>
-                            <td scope="col">001</td>
-                            <td scope="col">ADSL 8MB</td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                        </tr>
-                        <tr>
-                            <td scope="col">001</td>
-                            <td scope="col">ADSL 8MB</td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div
+      id="collapseTwo"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="customer-table-data table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Prod Offer ID</th>
+              <th scope="col">Product Name Action</th>
+              <th scope="col">Campaign Name</th>
+              <th scope="col">Campaign ID</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="col">002</td>
+              <td scope="col">ADSL 8MB</td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+            </tr>
+            <tr>
+              <td scope="col">001</td>
+              <td scope="col">ADSL 8MB</td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+            </tr>
+            <tr>
+              <td scope="col">001</td>
+              <td scope="col">ADSL 8MB</td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="button-area">
+        <button routerLink="/offerselection">Start New Sales</button>
+        <button>Transfer</button>
+        <button>Service Address Change</button>
+      </div>
     </div>
-    <div class="customer-table" id="accordionExample">
-        <div class="customer-table-head collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-            aria-expanded="false" aria-controls="collapseThree">
-            <div class="row">
-                <div class="col">Active</div>
-                <div class="col">010112911</div>
-                <div class="col">010112911</div>
-                <div class="col">Billing Account</div>
-                <div class="col"><i class="fa-solid fa-xmark"></i> <i routerLink="/updatebillingaccount"
-                        class="fa-solid fa-pencil"></i></div>
-            </div>
+  </div>
+  <div class="customer-table" id="accordionExample">
+    <div
+      class="customer-table-head collapsed"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseThree"
+      aria-expanded="false"
+      aria-controls="collapseThree"
+    >
+      <div class="row">
+        <div class="col">Active</div>
+        <div class="col">010112911</div>
+        <div class="col">010112911</div>
+        <div class="col">Billing Account</div>
+        <div class="col">
+          <i class="fa-solid fa-xmark"></i>
+          <i routerLink="/updatebillingaccount" class="fa-solid fa-pencil"></i>
         </div>
+      </div>
+    </div>
 
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample">
-            <div class="customer-table-data table-responsive">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Prod Offer ID</th>
-                            <th scope="col">Product Name Action</th>
-                            <th scope="col">Campaign Name</th>
-                            <th scope="col">Campaign ID</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td scope="col">002</td>
-                            <td scope="col">ADSL 8MB</td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                        </tr>
-                        <tr>
-                            <td scope="col">001</td>
-                            <td scope="col">ADSL 8MB</td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                        </tr>
-                        <tr>
-                            <td scope="col">001</td>
-                            <td scope="col">ADSL 8MB</td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                            <td scope="col"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div
+      id="collapseThree"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="customer-table-data table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Prod Offer ID</th>
+              <th scope="col">Product Name Action</th>
+              <th scope="col">Campaign Name</th>
+              <th scope="col">Campaign ID</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="col">002</td>
+              <td scope="col">ADSL 8MB</td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+            </tr>
+            <tr>
+              <td scope="col">001</td>
+              <td scope="col">ADSL 8MB</td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+            </tr>
+            <tr>
+              <td scope="col">001</td>
+              <td scope="col">ADSL 8MB</td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+              <td scope="col"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="button-area">
+        <button routerLink="/offerselection">Start New Sales</button>
+        <button>Transfer</button>
+        <button>Service Address Change</button>
+      </div>
     </div>
+  </div>
 </div>
