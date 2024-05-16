@@ -151,7 +151,7 @@ export const routes: Routes = [
         component: ConfigurationProductComponent
     },
     {
-        path: 'submit-order',
+        path: 'submitorder',
         component: SubmitOrderComponent
     }
 ];
