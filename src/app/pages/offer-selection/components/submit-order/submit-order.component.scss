@@ -1,6 +1,6 @@
 .submit-order-title {
   margin-top: 2rem;
-  margin-left: 1rem;
+  margin-left: 5rem;
   font-size: 32px;
   font-weight: 700;
   color: rgba(36, 36, 65, 1);
@@ -16,7 +16,7 @@ p {
 .order-info,
 .service-address,
 .total-amount {
-  margin: 1rem;
+  margin: 1rem 5rem 1rem 5rem;
 }
 
 .item-frame {
@@ -48,6 +48,7 @@ button {
   border-radius: 20px;
   border: none;
   background-color: rgba(245, 130, 32, 0.8);
+  margin:1rem 5rem 1rem 5rem;
   //
   font-size: 1.8rem;
   font-weight: 700;
