@@ -1,3 +1,4 @@
+//Tab-Menu
 .nav-tabs {
   border-bottom: 1px solid rgba(245, 130, 32, 0.8);
 }
@@ -37,6 +38,7 @@
   border-color: rgba(245, 130, 32, 0.6);
 }
 
+//Basket-Button
 .basket-button-area {
   display: flex;
   justify-content: center;
@@ -52,8 +54,10 @@
   font-weight: 700;
   color: rgba(255, 255, 255, 1);
 }
+
+//Buttons
 .button-area {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .cancel-button-area {
   display: flex;

@@ -1,6 +1,6 @@
 .catalog-area {
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .input-area input,
@@ -14,14 +14,14 @@ label {
   display: block;
   font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
   color: rgba(36, 36, 65, 1);
 }
 .input-area,
 .select-area,
 .button-area,
 .table-area {
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 .button-area button {
@@ -38,18 +38,18 @@ label {
 }
 table {
   text-align: center;
-  width: 98%;
+  width: 100%;
 }
 
 table input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 tbody {
   display: block;
   width: 100%; /* İstenen genişlik */
-  height: 150px; /* İstenen yükseklik */
+  height: 200px; /* İstenen yükseklik */
   overflow-y: auto; /* Yalnızca dikey kaydırma çubuğu */
   overflow-x: hidden;
 }
@@ -58,4 +58,8 @@ tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed; /* Tablonun genişliğini sabitler */
+}
+
+td, th{
+  padding: 0.2rem;
 }
