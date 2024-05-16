@@ -25,6 +25,9 @@ export class CreateCustomerAddressInfoComponent {
   street:string;
   houseFlatNumber;
   addressDescription:string;
+  cityName:string;
+
+  isAddressVisible: boolean = false;
   constructor(
     private fb:FormBuilder,
     private store:Store<{individualCustomerAddress:PostAddressRequest}>,
@@ -34,6 +37,7 @@ export class CreateCustomerAddressInfoComponent {
     this.store.pipe(select(selectIndividualCustomerAddress)).subscribe((individualCustomerAddress) => {
       console.log(individualCustomerAddress.addressDescription)
       this.cityId = individualCustomerAddress.cityId;
+      this.cityName = individualCustomerAddress.cityName;
       this.street = individualCustomerAddress.street;
       this.houseFlatNumber = individualCustomerAddress.houseFlatNumber;
       this.addressDescription = individualCustomerAddress.addressDescription;

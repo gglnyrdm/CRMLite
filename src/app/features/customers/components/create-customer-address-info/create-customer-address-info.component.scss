@@ -13,8 +13,7 @@
 }
 
 .primary-address-area{
-  margin-top: 3%;
-// background-color: red;
+margin-top: 3%;
 margin-left: 30%;
 max-width: 20rem;
 max-height: 30rem;;
@@ -36,9 +35,13 @@ font-weight: 500;
 line-height: 1.51rem;
 color:#242441;
 }
+
+.address-block{
+  visibility: hidden;
+}
 .address-box-update-menu{
-  width: 15.62rem;
-  height: 15.62rem;
+  width: 16.62rem;
+  height: 16.62rem;
   border: 3px solid #F5822099;
   border-radius: 0.6rem;
   // background-color: green;
@@ -58,23 +61,28 @@ color:#242441;
     line-height: 1.1rem;
     display: block;
     padding-left: 15%;
+    max-width: 100%;
+    max-height: 100%;
+    white-space: pre-wrap; /* İçeriği alt satıra geçirmek için */
   }
 }
 
 .menu-content {
-  display: block; /* Değişiklik: Menü içeriğini görünür hale getirin */
-  position: relative;
-  left: 85%;
   width: 6.5rem;
   height: 5.43rem;
   border: 1px solid #F5822099;
   border-radius: 1.5rem;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // background-color: red;
+    position: absolute; /* Menünün mutlak konumda olmasını sağlar */
+    top: 34%; /* Menünün içeriğin altında olmasını sağlar */
+    left: 25.7%; /* Menünün içeriğin solunda olmasını sağlar */
+    background-color: white; /* Menünün arka plan rengi */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Gölge efekti ekler */
+    z-index: 1; /* Diğer içeriklerin üzerinde görünmesini sağlar */
+
 }
 
 .menu-content button {
@@ -115,4 +123,8 @@ color:#242441;
   border:none;
   width: 6.25rem;
   height: 1.8rem;
+}
+
+.visible {
+  display: block;
 }

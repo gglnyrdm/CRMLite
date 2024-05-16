@@ -8,6 +8,7 @@ export const initialIndividualCustomerAddressState:IndividualCustomerAddressStat
     individualCustomerAddress:{
         customerId:'',
         cityId: '',
+        cityName:'',
         houseFlatNumber: '',
         street: '',
         addressDescription: ''

@@ -99,6 +99,7 @@ makeRequests(){
         let newAddress: PostAddressRequest = {
           customerId: response1.customerId,
           cityId: addressFromState.cityId,
+          cityName:'',
           houseFlatNumber: addressFromState.houseFlatNumber,
           street: addressFromState.street,
           addressDescription: addressFromState.addressDescription,

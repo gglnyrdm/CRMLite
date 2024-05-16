@@ -54,7 +54,11 @@ export class CreateCustomerAddressFormComponent {
   }
 
   createCustomerAddress() {
+  const selectedCity = this.cityList.find(city => city.id === Number(this.form.value.city));
+  const cityName = selectedCity.name;
+  console.log('Selected City Name:', cityName);
     const individualCustomerAddress : PostAddressRequest={
+      cityName:cityName,
       customerId: null,
       cityId: this.form.value.city,
       houseFlatNumber: this.form.value.houseFlatNumber,
