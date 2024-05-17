@@ -5,7 +5,8 @@
                 <div class="left-side">
                         <div class="input-area">
                             <span>Email*</span>
-                            <input class="input-email" appEmailFormat type="email" formControlName="email" maxlength="250">
+                            <input class="input-email" [ngClass]="{ 'red-border': showEmailWarning }" appEmailFormat type="email" formControlName="email" maxlength="250">
+                            <p class="warning-message"*ngIf="showEmailWarning">Please enter valid e-mail address.</p>
                         </div>
                         <div class="input-area">
                             <span>Mobile Phone*</span>

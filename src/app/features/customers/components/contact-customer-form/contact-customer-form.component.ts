@@ -39,6 +39,7 @@ export class ContactCustomerFormComponent {
   showMobilePhoneWarning: boolean = false;
   showHomePhoneWarning: boolean = false;
   showFaxWarning: boolean = false;
+  showEmailWarning: boolean = false;
 
   isFormValid: boolean = false;
 
@@ -73,53 +74,35 @@ export class ContactCustomerFormComponent {
 
   onSubmitForm() {
     debugger;
-    if (this.formContactMedium.value.mobilePhone.length < 10 &&
-      (this.formContactMedium.value.fax.length > 0 && this.formContactMedium.value.fax.length < 10) &&
-      (this.formContactMedium.value.homePhone.length > 0 && this.formContactMedium.value.homePhone.length < 10)) {
-      this.showHomePhoneWarning = true;
+    const { mobilePhone, fax, homePhone, email } = this.formContactMedium.value;
+  
+    this.showMobilePhoneWarning = false;
+    this.showHomePhoneWarning = false;
+    this.showFaxWarning = false;
+    this.showEmailWarning = false;
+
+    if (mobilePhone.length > 0 && mobilePhone.length < 10) {
       this.showMobilePhoneWarning = true;
+    }
+  
+    if (fax.length > 0 && fax.length < 10) {
       this.showFaxWarning = true;
     }
-    else if (this.formContactMedium.value.mobilePhone.length < 10 &&
-      (this.formContactMedium.value.fax.length > 0 && this.formContactMedium.value.fax.length < 10)
-    ) {
-      this.showMobilePhoneWarning = true;
-      this.showFaxWarning = true;
-      this.showHomePhoneWarning = false;
-    }
-    else if (this.formContactMedium.value.mobilePhone.length < 10 &&
-      (this.formContactMedium.value.homePhone.length > 0 && this.formContactMedium.value.homePhone.length < 10)
-    ) {
-      this.showMobilePhoneWarning = true;
+  
+    if (homePhone.length > 0 && homePhone.length < 10) {
       this.showHomePhoneWarning = true;
-      this.showFaxWarning = false;
     }
-    else if ((this.formContactMedium.value.homePhone.length > 0 && this.formContactMedium.value.homePhone.length < 10) &&
-      (this.formContactMedium.value.fax.length > 0 && this.formContactMedium.value.fax.length < 10)
-    ) {
-      this.showMobilePhoneWarning = false;
-      this.showHomePhoneWarning = true;
-      this.showFaxWarning = true;
+  
+    if (!email.includes('@') || !email.includes('.')) {
+      this.showEmailWarning = true;
     }
-    else if (this.formContactMedium.value.mobilePhone.length < 10) {
-      this.showMobilePhoneWarning = true;
-      this.showHomePhoneWarning = false;
-      this.showFaxWarning = false;
-    }
-    else if (this.formContactMedium.value.fax.length > 0 && this.formContactMedium.value.fax.length < 10) {
-      this.showMobilePhoneWarning = false;
-      this.showHomePhoneWarning = false;
-      this.showFaxWarning = true;
-    }
-    else if (this.formContactMedium.value.homePhone.length > 0 && this.formContactMedium.value.homePhone.length < 10) {
-      this.showHomePhoneWarning = true;
-      this.showMobilePhoneWarning = false;
-      this.showFaxWarning = true;
-    }
-    else {
+  
+    if (!this.showMobilePhoneWarning && !this.showFaxWarning && !this.showHomePhoneWarning && !this.showEmailWarning) {
       this.makeRequests();
     }
   }
+  
+  
 
   goPrevious() {
     const contactMedium: PostContactMediumRequest = {
