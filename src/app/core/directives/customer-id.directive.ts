@@ -10,10 +10,10 @@ export class CustomerIdDirective {
 
   @HostListener('input', ['$event']) onInputChange(event: KeyboardEvent) {
     const input = event.target as HTMLInputElement;
-    const regex = /^[a-zA-Z0-9\- ]*$/; // Latin karakterler, - işareti ve rakamlar
+    const regex = /^[a-zA-Z0-9\-]*$/; // Latin karakterler, - işareti ve rakamlar (boşluk karakteri olmadan)
     const value = input.value;
     if (!regex.test(value)) {
-      input.value = value.replace(/[^a-zA-Z0-9\- ]/g, '');
+      input.value = value.replace(/[^a-zA-Z0-9\-]/g, '');
     }
   }
 }

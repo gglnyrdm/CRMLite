@@ -42,24 +42,23 @@ export class SearchFilterComponent {
   ngOnInit(): void {
     this.createForm();
     this.form.valueChanges.subscribe(() => {
-      this.isDisabledSearchButton = this.isFormEmpty();
+      this.isDisabledSearchButton = this.isFormInvalid();
       this.isDisabledClearButton = this.isFormEmpty();
     });
+    this.form.statusChanges.subscribe(() => {
+      this.isDisabledSearchButton = this.isFormInvalid();
+    });
   }
-  ngOnChange():void {
-    
-  }
-
   
   createForm() {
     this.form =this.fb.group({
-      idNumber: new FormControl(''),
-      customerId: new FormControl(''),
-      accountNumber: new FormControl(''),
-      gsmNumber: new FormControl(''),
-      firstName: new FormControl(''),
-      lastName: new FormControl(''),
-      orderNumber: new FormControl(''),
+      idNumber: new FormControl('',[Validators.pattern(/^\d+$/)]),
+      customerId: new FormControl('',[Validators.pattern(/^[a-zA-Z0-9\-]*$/)]),
+      accountNumber: new FormControl('',[Validators.pattern(/^\d+$/)]),
+      gsmNumber: new FormControl('',[Validators.pattern(/^\d+$/)]),
+      firstName: new FormControl('',[Validators.pattern(/^[a-zA-ZçÇğĞıİöÖşŞüÜ\s]+$/)]),
+      lastName: new FormControl('', [Validators.pattern(/^[a-zA-ZçÇğĞıİöÖşŞüÜ\s]+$/)]),
+      orderNumber: new FormControl('',[Validators.pattern(/^\d+$/)]),
     });
   }
 
@@ -106,8 +105,6 @@ export class SearchFilterComponent {
   })
   }
 
-  
- 
   isFormEmpty(): boolean {
     const formValues = this.form.value;
     for (const key in formValues) {
@@ -118,8 +115,9 @@ export class SearchFilterComponent {
     return true;
   }
   
-  
-
+  isFormInvalid(): boolean {
+    return this.form.invalid || this.isFormEmpty();
+  }
 onSubmitForm() {
   if(this.form.invalid)
     {
