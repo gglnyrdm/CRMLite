@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { OnlyNumberInputDirective } from '../../../../core/directives/only-number-input.directive';
 import { RouterModule, Router } from '@angular/router';
@@ -16,6 +16,8 @@ import { PostAddressRequest } from '../../models/requests/address/post-address-r
 import { selectIndividualCustomer } from '../../../../shared/store/customers/individual-customer.selector';
 import { selectIndividualCustomerAddress } from '../../../../shared/store/addresses/customer-address.selector';
 import { switchMap } from 'rxjs';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { DialogPopupComponent } from '../../../../shared/components/dialog-popup/dialog-popup.component';
 
 @Component({
   selector: 'app-contact-customer-form',
@@ -50,7 +52,8 @@ export class ContactCustomerFormComponent {
     private contactMediumApiService: ContactMediumApiService,
     private addressApiService: AddressApiService,
     private store: Store<{ contactMedium: PostContactMediumRequest }>,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog
   ) { }
   ngOnInit(): void {
     this.createForm();
@@ -155,12 +158,28 @@ export class ContactCustomerFormComponent {
           })
         );
       })).subscribe({
-        next: () => {
+        next: async () => {
+          await this.openPopup("Customer has been saved.");
           this.router.navigate([`/customer/${this.induvidualCustomerId}/info`])
         },
         error: (err) => {
           console.log(err);
         }
       });
+  }
+
+  openPopup(message: string): Promise<void> {
+    const dialogRef = this.dialog.open(DialogPopupComponent, {
+      data: { message: message },
+      panelClass: 'custom-dialog-container',
+      disableClose: true
+    });
+
+    return new Promise(resolve => {
+      setTimeout(() => {
+        dialogRef.close();
+        resolve();
+      }, 2500);
+    });
   }
 }
