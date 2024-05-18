@@ -106,8 +106,6 @@ createForm() {
   });
 }
 
-
-
 createCustomer() {
   const individualCustomer : CreateCustomerRequest={
     firstName:this.form.value.firstName,

@@ -1,13 +1,17 @@
 .address-info-title {
-  margin-top: 0;
-  margin-left: 0.7rem;
-  margin-bottom: 0;
+  width: 90%;
+  margin-left: 4.5rem;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.51rem ;
+  border-bottom: 3px solid black;
+  padding-bottom: 1rem;
+  margin-bottom:0;
 }
 
 .content {
   position: relative;
-  border: 1px solid;
-  border-radius: 16px;
   min-width: 100%;
   height: 100%;
 }
@@ -16,7 +20,8 @@
 margin-top: 3%;
 margin-left: 30%;
 max-width: 20rem;
-max-height: 30rem;;
+max-height: 30rem;
+font-size: 1rem;
 }
 .add-new-address-button {
   display: block;
@@ -26,7 +31,7 @@ max-height: 30rem;;
   color: white;
   border-radius: 0.7rem;
   border:none;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .primary-address-text{
@@ -47,6 +52,7 @@ color:#242441;
   // background-color: green;
   padding-right: 1rem;
   padding-top: 0.5rem ;
+  margin-bottom: 1rem;
   i{
     position: relative;
     width: 100%;
@@ -101,8 +107,6 @@ color:#242441;
 .previous-button {
   position: relative;
   margin-left: 3rem;
-  margin-bottom: 1rem;
-  margin-top: 3rem;
   float: left;
   width: 6.25rem;
   height: 1.8rem;
@@ -115,8 +119,6 @@ color:#242441;
   position: relative;
   float: right;
   margin-right: 3rem;
-  margin-bottom: 1rem;
-  margin-top: 3rem;
   background-color: #F5822099;
   color: white;
   border-radius: 0.7rem;
@@ -127,4 +129,8 @@ color:#242441;
 
 .visible {
   display: block;
+}
+
+.col-md-4 {
+  padding: 0;
 }
