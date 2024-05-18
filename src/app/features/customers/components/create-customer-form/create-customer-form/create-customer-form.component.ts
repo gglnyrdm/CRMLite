@@ -9,7 +9,7 @@ import { OnlyNumberInputDirective } from '../../../../../core/directives/only-nu
 import { Store, select } from '@ngrx/store';
 import { setIndividualCustomer } from '../../../../../shared/store/customers/individual-customer.action';
 import { selectIndividualCustomer } from '../../../../../shared/store/customers/individual-customer.selector';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogPopupComponent } from '../../../../../shared/components/dialog-popup/dialog-popup.component';
 
 @Component({
@@ -41,10 +41,7 @@ constructor(
   private store:Store<{individualCustomer:CreateCustomerRequest}>,
   private router:Router,
   private dialog: MatDialog
-){
-
-  
-}
+){}
 
 ngOnInit():void {
   this.createForm();
@@ -57,15 +54,16 @@ ngOnInit():void {
 onSubmitForm() {
   if (this.form.valid) {
     this.customerApiService.checkNationalityIdentityExists(this.form.value.nationalityIdentity).subscribe({
-      next: (response) => {
+      next: async (response) => {
         if(!response)
           {
+            this.openPopup("Customer demographic information have been saved successfully.");
+            await this.delay(2500);
             this.createCustomer();
             console.log("Başarılı")
           }
           else {
-            console.log("Böyle bir id var.")
-            this.openPopup("A customer already existing with this nationality ID");
+            await this.openPopup("A customer already existing with this nationality ID");
           }
       
       },
@@ -81,15 +79,18 @@ onSubmitForm() {
 }
 
 openPopup(message: string): void {
-  const dialogRef = this.dialog.open(DialogPopupComponent, {
+  const dialogRef: MatDialogRef<DialogPopupComponent> = this.dialog.open(DialogPopupComponent, {
     data: { message: message },
     panelClass: 'custom-dialog-container'
-    
   });
 
   setTimeout(() => {
-    dialogRef.close();
-  }, 2500);
+    dialogRef.close(); // Pop-up'ı belirli bir süre sonra kapat
+  }, 2500); // 2.5 saniye beklet
+}
+
+delay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 createForm() {
