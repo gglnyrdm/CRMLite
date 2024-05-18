@@ -7,6 +7,7 @@ import { provideState, provideStore } from '@ngrx/store';
 import { individualCustomerReducer } from './shared/store/customers/individual-customer.reducer';
 import { contactMediumReducer } from './shared/store/contactMedium/contact-medium.reducer';
 import { individualCustomerAddressReducer } from './shared/store/addresses/customer-address.reducer';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,6 @@ export const appConfig: ApplicationConfig = {
     provideStore(),
     provideState({ name:'individualCustomer',reducer:individualCustomerReducer }),
     provideState({ name: 'individualCustomerAddress', reducer: individualCustomerAddressReducer }),
-    provideState({ name: 'contactMedium', reducer: contactMediumReducer })
+    provideState({ name: 'contactMedium', reducer: contactMediumReducer }), provideAnimationsAsync()
   ]
 };

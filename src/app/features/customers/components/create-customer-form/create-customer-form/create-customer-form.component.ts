@@ -9,6 +9,8 @@ import { OnlyNumberInputDirective } from '../../../../../core/directives/only-nu
 import { Store, select } from '@ngrx/store';
 import { setIndividualCustomer } from '../../../../../shared/store/customers/individual-customer.action';
 import { selectIndividualCustomer } from '../../../../../shared/store/customers/individual-customer.selector';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogPopupComponent } from '../../../../../shared/components/dialog-popup/dialog-popup.component';
 
 @Component({
   selector: 'app-create-customer-form',
@@ -27,24 +29,21 @@ import { selectIndividualCustomer } from '../../../../../shared/store/customers/
 export class CreateCustomerFormComponent {
   isFormValid: boolean = false;
   form:FormGroup;
-  //birthDate
   currentDate = new Date();
   eighteenYearsAgo = new Date(this.currentDate.getFullYear() - 18, this.currentDate.getMonth(), this.currentDate.getDate());
   formattedDate = `${this.eighteenYearsAgo.getFullYear()}-${String(this.eighteenYearsAgo.getMonth() + 1).padStart(2, '0')}-${String(this.eighteenYearsAgo.getDate()).padStart(2, '0')}`;
   
-  showNationalityIdWarning: boolean = false;
-  showInvalidFormWarning:boolean = false;
+  
 
 constructor(
   private fb:FormBuilder,
   private customerApiService:CustomerApiService,
   private store:Store<{individualCustomer:CreateCustomerRequest}>,
-  private router:Router
+  private router:Router,
+  private dialog: MatDialog
 ){
 
-  // this.form.valueChanges.subscribe(() => {
-  //   this.isFormValid = this.form.valid;
-  // });
+  
 }
 
 ngOnInit():void {
@@ -57,31 +56,52 @@ ngOnInit():void {
 
 onSubmitForm() {
   if (this.form.valid) {
-    if (this.form.controls['nationalityIdentity'].value.length < 11 ) {
-      this.showNationalityIdWarning = true;
-      this.showInvalidFormWarning = false;
-
-    } else {
-      this.showNationalityIdWarning = false;
-      this.createCustomer();
-      console.log("Başarılı")
+    this.customerApiService.checkNationalityIdentityExists(this.form.value.nationalityIdentity).subscribe({
+      next: (response) => {
+        if(!response)
+          {
+            this.createCustomer();
+            console.log("Başarılı")
+          }
+          else {
+            console.log("Böyle bir id var.")
+            this.openPopup("A customer already existing with this nationality ID");
+          }
+      
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+      
     }
-  } else {
-    this.showInvalidFormWarning = true;
+  else {
     console.error('Form is invalid', this.form.value);
   }
 }
 
+openPopup(message: string): void {
+  const dialogRef = this.dialog.open(DialogPopupComponent, {
+    data: { message: message },
+    panelClass: 'custom-dialog-container'
+    
+  });
+
+  setTimeout(() => {
+    dialogRef.close();
+  }, 2500);
+}
+
 createForm() {
   this.form = this.fb.group({
-    firstName: ['', Validators.required],
-    middleName: [''],
-    lastName: ['', Validators.required],
+    firstName: ['', [Validators.required,Validators.minLength(2),Validators.maxLength(20)]],
+    middleName: ['',[Validators.minLength(2),Validators.maxLength(20)]],
+    lastName: ['',[Validators.required,Validators.minLength(2),Validators.maxLength(20)]],
     gender: ['', Validators.required],
-    motherName: [''],
-    fatherName: [''],
+    motherName: ['',[Validators.required,Validators.minLength(2),Validators.maxLength(20)]],
+    fatherName: ['',[Validators.minLength(2),Validators.maxLength(20)]],
     birthDate: ['', Validators.required],
-    nationalityIdentity: ['', Validators.required],
+    nationalityIdentity: ['', [Validators.required,Validators.minLength(11)]]
   });
 }
 

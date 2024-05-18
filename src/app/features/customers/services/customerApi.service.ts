@@ -33,4 +33,10 @@ export class CustomerApiService {
   getById(id: string): Observable<GetCustomerResponse> {
     return this.http.get<GetCustomerResponse>(`http://localhost:8081/api/v1/individualCustomers/${id}`)
   }
+
+  checkNationalityIdentityExists(nationalityIdentity:String):Observable<Boolean>{
+    return this.http.get<Boolean>(
+      `http://localhost:8081/api/v1/individualCustomers/nationality-identity/${nationalityIdentity}`
+    );
+  }
 }
