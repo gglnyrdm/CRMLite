@@ -5,5 +5,6 @@ export interface PostAddressRequest {
     houseFlatNumber: string;
     street: string;
     addressDescription: string;
+    // isPrimaryAddress:boolean;
   }
   

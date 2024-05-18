@@ -11,6 +11,7 @@ import { setIndividualCustomer } from '../../../../../shared/store/customers/ind
 import { selectIndividualCustomer } from '../../../../../shared/store/customers/individual-customer.selector';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogPopupComponent } from '../../../../../shared/components/dialog-popup/dialog-popup.component';
+import { CheckNationalityIdentityOnMernis } from '../../../models/requests/customer/check-nationality-identity-on-mernis-request';
 
 @Component({
   selector: 'app-create-customer-form',
@@ -33,8 +34,7 @@ export class CreateCustomerFormComponent {
   eighteenYearsAgo = new Date(this.currentDate.getFullYear() - 18, this.currentDate.getMonth(), this.currentDate.getDate());
   formattedDate = `${this.eighteenYearsAgo.getFullYear()}-${String(this.eighteenYearsAgo.getMonth() + 1).padStart(2, '0')}-${String(this.eighteenYearsAgo.getDate()).padStart(2, '0')}`;
   
-  
-
+  checkNationalityIdentityOnMernis: CheckNationalityIdentityOnMernis;
 constructor(
   private fb:FormBuilder,
   private customerApiService:CustomerApiService,
@@ -45,27 +45,66 @@ constructor(
 
 ngOnInit():void {
   this.createForm();
+  
   this.store.pipe(select(selectIndividualCustomer)).subscribe((individualCustomer)=>{
     console.log(individualCustomer)
     this.form.patchValue(individualCustomer)
   })
 }
 
+checkNationalityIdentityRequest() {
+  const birthDateValue = this.form.value.birthDate;
+  let birthDate: Date;
+
+  if (typeof birthDateValue === 'string') {
+    birthDate = new Date(birthDateValue);
+  } else {
+    birthDate = birthDateValue;
+  }
+  this.checkNationalityIdentityOnMernis ={
+    nationalityIdentity:this.form.value.nationalityIdentity,
+    firstName:this.checkMiddleName(),
+    lastName:this.form.value.lastName,
+    birthDate:birthDate.getFullYear()
+  }
+}
+checkMiddleName() {
+  if(this.form.value.middleName){
+    return this.form.value.firstName+ ' ' +this.form.value.middleName;
+  }
+  else {
+    return this.form.value.firstName;
+  }
+}
 onSubmitForm() {
   if (this.form.valid) {
     this.customerApiService.checkNationalityIdentityExists(this.form.value.nationalityIdentity).subscribe({
       next: async (response) => {
         if(!response)
           {
-            this.openPopup("Customer demographic information have been saved successfully.");
-            await this.delay(2500);
-            this.createCustomer();
-            console.log("Başarılı")
+            this.checkNationalityIdentityRequest();
+            this.customerApiService.checkNationalityIdentityOnMernis(this.checkNationalityIdentityOnMernis).subscribe({
+              next: async (response) => {
+                if(!response)
+                  {
+                    this.openPopup("Customer demographic information have been saved successfully.");
+                    await this.delay(2500);
+                    this.createCustomer();
+                  }
+                  else {
+                    this.openPopup("You entered invalid ID.");
+                    await this.delay(2500);
+                  }
+              },
+              error: (err) => {
+                console.log(err);
+              }
+            });
+           
           }
           else {
             await this.openPopup("A customer already existing with this nationality ID");
           }
-      
       },
       error: (err) => {
         console.log(err);
@@ -85,8 +124,8 @@ openPopup(message: string): void {
   });
 
   setTimeout(() => {
-    dialogRef.close(); // Pop-up'ı belirli bir süre sonra kapat
-  }, 2500); // 2.5 saniye beklet
+    dialogRef.close();
+  }, 2500); 
 }
 
 delay(ms: number) {
@@ -105,6 +144,7 @@ createForm() {
     nationalityIdentity: ['', [Validators.required,Validators.minLength(11)]]
   });
 }
+
 
 createCustomer() {
   const individualCustomer : CreateCustomerRequest={

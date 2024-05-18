@@ -63,7 +63,7 @@ export class CreateCustomerAddressFormComponent {
       cityId: this.form.value.city,
       houseFlatNumber: this.form.value.houseFlatNumber,
       street: this.form.value.street,
-      addressDescription: this.form.value.addressDescription
+      addressDescription: this.form.value.addressDescription,
     };
     this.store.dispatch(
       setIndividualCustomerAddress({individualCustomerAddress})

@@ -8,6 +8,7 @@ import { PostCustomerResponse } from '../models/responses/customer/post-customer
 import { GetCustomerResponse } from '../models/responses/customer/get-customer-response';
 import { PutCustomerRequest } from '../models/requests/customer/put-customer-request';
 import { PutCustomerResponse } from '../models/responses/customer/put-customer-response';
+import { CheckNationalityIdentityOnMernis } from '../models/requests/customer/check-nationality-identity-on-mernis-request';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,12 @@ export class CustomerApiService {
   checkNationalityIdentityExists(nationalityIdentity:String):Observable<Boolean>{
     return this.http.get<Boolean>(
       `http://localhost:8081/api/v1/individualCustomers/nationality-identity/${nationalityIdentity}`
+    );
+  }
+  checkNationalityIdentityOnMernis(request:CheckNationalityIdentityOnMernis):Observable<Boolean>{
+    debugger;
+    return this.http.post<Boolean>(
+      `http://localhost:8081/api/v1/individualCustomers/nationality-identity/check`,request
     );
   }
 }
