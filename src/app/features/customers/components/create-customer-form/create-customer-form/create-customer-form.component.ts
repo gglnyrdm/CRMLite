@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CreateCustomerRequest } from '../../../models/requests/customer/create-customer-request';
 import { CustomerApiService } from '../../../services/customerApi.service';
@@ -84,6 +84,8 @@ createForm() {
     nationalityIdentity: ['', Validators.required],
   });
 }
+
+
 
 createCustomer() {
   const individualCustomer : CreateCustomerRequest={

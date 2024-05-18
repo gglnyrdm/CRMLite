@@ -117,6 +117,7 @@ export class ContactCustomerFormComponent {
   }
 
   makeRequests() {
+    debugger;
     let customerFromState: CreateCustomerRequest;
     let addressFromState: PostAddressRequest;
     this.store

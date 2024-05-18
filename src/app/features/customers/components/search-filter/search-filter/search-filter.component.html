@@ -2,20 +2,20 @@
 <div class="form-area">
     <form [formGroup]="form" (submit)="onSubmitForm()">
         <p class="input-name">ID Number</p>
-        <input type="text" appOnlyNumberInput formControlName="idNumber" >
+        <input type="text" appOnlyNumberInput formControlName="idNumber" maxlength="20">
         <p class="input-name">Customer ID</p>
         <input type="text"  appCustomerId formControlName="customerId">
         <p class="input-name">Account Number</p>
-        <input type="text"  appOnlyNumberInput formControlName="accountNumber">
+        <input type="text"  appOnlyNumberInput formControlName="accountNumber" maxlength="20">
         <p class="input-name">GSM Number</p>
         <span>+90</span>
-        <input class="gsm-number-input" type="text" appOnlyNumberInput formControlName="gsmNumber">
+        <input class="gsm-number-input" type="text" appOnlyNumberInput formControlName="gsmNumber" maxlength="10">
         <p class="input-name">First Name</p>
-        <input type="text" appOnlyLetterDirective formControlName="firstName">
+        <input type="text" appOnlyLetterDirective formControlName="firstName" maxlength="20">
         <p class="input-name">Last Name</p>
-        <input type="text" appOnlyLetterDirective formControlName="lastName">
+        <input type="text" appOnlyLetterDirective formControlName="lastName" maxlength="20">
         <p class="input-name">Order Number</p>
-        <input type="text" appOnlyNumberInput formControlName="orderNumber">
+        <input type="text" appOnlyNumberInput formControlName="orderNumber" maxlength="20">
         <button type="reset" [disabled]="isDisabledClearButton" [ngStyle]="{'background-color': isDisabledSearchButton ? '#E0E0E0' : '#242441'}">CLEAR</button>
         <button type="submit" [disabled]="isDisabledSearchButton" [ngStyle]="{'background-color': isDisabledSearchButton ? '#E0E0E0' : '#F5822099'}" >SEARCH</button>
     </form>

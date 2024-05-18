@@ -52,13 +52,13 @@ export class SearchFilterComponent {
   
   createForm() {
     this.form =this.fb.group({
-      idNumber: new FormControl('',[Validators.pattern(/^\d+$/)]),
+      idNumber: new FormControl('',[Validators.pattern(/^\d+$/),Validators.maxLength(20)]),
       customerId: new FormControl('',[Validators.pattern(/^[a-zA-Z0-9\-]*$/)]),
-      accountNumber: new FormControl('',[Validators.pattern(/^\d+$/)]),
-      gsmNumber: new FormControl('',[Validators.pattern(/^\d+$/)]),
-      firstName: new FormControl('',[Validators.pattern(/^[a-zA-ZçÇğĞıİöÖşŞüÜ\s]+$/)]),
-      lastName: new FormControl('', [Validators.pattern(/^[a-zA-ZçÇğĞıİöÖşŞüÜ\s]+$/)]),
-      orderNumber: new FormControl('',[Validators.pattern(/^\d+$/)]),
+      accountNumber: new FormControl('',[Validators.pattern(/^\d+$/),Validators.maxLength(20)]),
+      gsmNumber: new FormControl('',[Validators.pattern(/^\d+$/), Validators.maxLength(10)]),
+      firstName: new FormControl('',[Validators.pattern(/^[a-zA-ZçÇğĞıİöÖşŞüÜ\s]+$/),Validators.maxLength(20)]),
+      lastName: new FormControl('', [Validators.pattern(/^[a-zA-ZçÇğĞıİöÖşŞüÜ\s]+$/),Validators.maxLength(20)]),
+      orderNumber: new FormControl('',[Validators.pattern(/^\d+$/),Validators.maxLength(20)]),
     });
   }
 
