@@ -2,8 +2,9 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CustomerApiService } from '../../../features/customers/services/customerApi.service';
 import { GetCustomerResponse } from '../../../features/customers/models/responses/customer/get-customer-response';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogPopupWithButtonsComponent } from '../../../shared/components/dialog-popup-with-buttons/dialog-popup-with-buttons.component';
+import { DialogPopupComponent } from '../../../shared/components/dialog-popup/dialog-popup.component';
 
 @Component({
   selector: 'app-customer-info',
@@ -74,9 +75,26 @@ gender:string;
     });
   }
 
-  clickYesButton(): void {
+  async clickYesButton() : Promise<void> {
     //Kullanıcı aktif ürünü var mı sorgusu yapılacak
-   console.log("yes butonuna basıldı")
+    this.openPopup("The customer has been deleted.");
+    await this.delay(2500);
+    this.router.navigate([`/searchcustomer`])
+  }
+
+  openPopup(message: string): void {
+    const dialogRef: MatDialogRef<DialogPopupComponent> = this.dialog.open(DialogPopupComponent, {
+      data: { message: message },
+      panelClass: 'custom-dialog-container'
+    });
+  
+    setTimeout(() => {
+      dialogRef.close();
+    }, 2500); 
+  }
+  
+  delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
     
 }
