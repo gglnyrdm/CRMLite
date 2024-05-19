@@ -5,6 +5,8 @@ import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import { CustomerApiService } from '../../services/customerApi.service';
 import { GetCustomerResponse } from '../../models/responses/customer/get-customer-response';
 import { PutCustomerRequest } from '../../models/requests/customer/put-customer-request';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DialogPopupComponent } from '../../../../shared/components/dialog-popup/dialog-popup.component';
 
 @Component({
   selector: 'app-customer-info-form',
@@ -41,6 +43,7 @@ export class CustomerInfoFormComponent {
     private customerApiService: CustomerApiService,
     private activatedRoute: ActivatedRoute,
     private change: ChangeDetectorRef,
+    private dialog: MatDialog
 
   ){}
 
@@ -100,6 +103,7 @@ export class CustomerInfoFormComponent {
       },
       complete: () => {
         // this.form.reset();
+        this.openPopup("Changes have been saved.");
         this.router.navigate(['customer/',this.customerId ,'info'])
       }
     })
@@ -118,5 +122,16 @@ export class CustomerInfoFormComponent {
 
   goPrevious() {
     this.router.navigate(['customer/',this.customerId ,'info'])
+    }
+
+    openPopup(message: string): void {
+      const dialogRef: MatDialogRef<DialogPopupComponent> = this.dialog.open(DialogPopupComponent, {
+        data: { message: message },
+        panelClass: 'custom-dialog-container'
+      });
+    
+      setTimeout(() => {
+        dialogRef.close();
+      }, 2500); 
     }
 }
