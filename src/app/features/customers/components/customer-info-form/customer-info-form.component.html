@@ -6,11 +6,11 @@
                 <div class="left-side">
                         <div class="input-area">
                             <span>First Name</span>
-                            <input type="text" formControlName="firstName" maxlength="20">
+                            <input appOnlyLetterDirective type="text" formControlName="firstName" maxlength="20">
                         </div>
                         <div class="input-area">
                             <span>Last Name</span>
-                            <input type="text" formControlName="lastName" maxlength="20">
+                            <input appOnlyLetterDirective type="text" formControlName="lastName" maxlength="20">
                         </div>
                         <div class="input-area">
                             <span>Gender</span>
@@ -22,7 +22,7 @@
                         </div>
                         <div class="input-area">
                             <span>Mother Name</span>
-                            <input type="text" formControlName="motherName" maxlength="20">
+                            <input appOnlyLetterDirective type="text" formControlName="motherName" maxlength="20">
                         </div>
                 </div>
             </div>
@@ -30,19 +30,19 @@
                 <div class="right-side">
                         <div class="input-area">
                             <span>Middle Name</span>
-                        <input type="text" formControlName="middleName" maxlength="20">
+                        <input appOnlyLetterDirective type="text" formControlName="middleName" maxlength="20">
                         </div>
                         <div class="input-area">
                             <span>Birth Date</span>
-                            <input type="date" formControlName="birthDate">
+                            <input type="date" formControlName="birthDate"  min="1920-01-01" [max]="formattedDate">
                         </div>
                         <div class="input-area">
                             <span>Father Name</span>
-                        <input type="text" formControlName="fatherName" maxlength="20">
+                        <input appOnlyLetterDirective type="text" formControlName="fatherName" maxlength="20">
                         </div>
                         <div class="input-area">
                         <span>Nationality ID</span> 
-                        <input type="text" formControlName="nationalityIdentity" maxlength="11">
+                        <input appOnlyNumberInput type="text" formControlName="nationalityIdentity" maxlength="11">
                         </div>
                         <div class="buttons">
                         <button class="cancel-button" (click)="goPrevious()">Cancel</button>
