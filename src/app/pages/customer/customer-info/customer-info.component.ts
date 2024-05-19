@@ -36,7 +36,6 @@ gender:string;
   getCustomerInfo(){
     this.customerApiService.getById(this.customerId).subscribe({
       next: (customerDetails) => {
-        debugger;
         this.customerInfo = customerDetails;
         console.log(customerDetails)
       },

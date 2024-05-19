@@ -67,7 +67,6 @@ span {
   .save-button {
     position: relative;
     display: flex;
-    left: 70%;
     align-items: center;
     justify-content: center;
     color: white;
@@ -84,6 +83,7 @@ span {
   .cancel-button {
     position: relative;
     display: flex;
+    left: 70%;
     align-items: center;
     justify-content: center;
     color: white;
@@ -94,6 +94,8 @@ span {
     border: none;
     font-weight: 400;
     font-size: 1rem;
+
+    
   }
 
   .buttons {

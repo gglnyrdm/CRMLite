@@ -63,7 +63,6 @@ export class CustomerInfoFormComponent {
       },
       complete: () => {
     this.createForm();
-        
 
       }
     })
@@ -71,13 +70,13 @@ export class CustomerInfoFormComponent {
 
   createForm() {
     this.form = this.fb.group({
-      firstName: [`${this.customerInfo.firstName}`,[Validators.required]],
-      lastName: [`${this.customerInfo.lastName}`,[Validators.required]],
+      firstName: [`${this.customerInfo.firstName}`,[Validators.required,Validators.minLength(2)]],
+      lastName: [`${this.customerInfo.lastName}`,[Validators.required,Validators.minLength(2)]],
       gender: ['',[Validators.required]],
-      motherName: [`${this.customerInfo.motherName}`],
-      middleName: [`${this.customerInfo.middleName}`],
-      birthDate: [`${this.customerInfo.birthDate}`],
-      fatherName: [`${this.customerInfo.fatherName}`],
+      motherName: [`${this.customerInfo.motherName}`,[Validators.minLength(2)]],
+      middleName: [`${this.customerInfo.middleName}`,[Validators.minLength(2)]],
+      birthDate: [`${this.customerInfo.birthDate}`,[Validators.required]],
+      fatherName: [`${this.customerInfo.fatherName}`,[Validators.minLength(2)]],
       nationalityIdentity: [`${this.customerInfo.nationalityIdentity}`,[Validators.required]]
     });
   }
