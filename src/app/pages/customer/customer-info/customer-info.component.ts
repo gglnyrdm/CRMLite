@@ -42,6 +42,7 @@ gender:string;
       next: (customerDetails) => {
         this.customerInfo = customerDetails;
         console.log(customerDetails)
+        localStorage.setItem('customerId', this.customerInfo.customerId);
       },
       complete: () => {
         this.change.markForCheck();

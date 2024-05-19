@@ -1,19 +1,14 @@
 <p class="title">Address</p>
+ <span style="display: none;">{{addressListByCustomerId[0].customerId}}</span> <!--Bu kod olmadan ngforu çalıştırmıyor-->
 <button class="add-address" routerLink="/customeraddress-add">Add New Address</button>
 <p class="subtitle">Primary Address</p>
 <div class="container text-center">
   <div class="row">
-    <div class="col">
+    <div class="col" *ngFor="let address of addressListByCustomerId">
       <div class="menu"><i class="fas fa-ellipsis-v fa-lg"></i></div>
-      <p class="address-info">City, Street Name, Hause/Flat Number, Address Description</p>
-    </div>
-    <div class="col">
-      <div class="menu"><i class="fas fa-ellipsis-v fa-lg"></i></div>
-      <p class="address-info">City, Street Name, Hause/Flat Number, Address Description</p>
-    </div>
-    <div class="col">
-      <div class="menu"><i class="fas fa-ellipsis-v fa-lg"></i></div>
-      <p class="address-info">City, Street Name, Hause/Flat Number, Address Description</p>
+      <p class="address-info">
+        {{ address.id }}, {{ address.street }}, {{ address.houseFlatNumber }}, {{ address.addressDescription }}
+      </p>
     </div>
   </div>
 </div>

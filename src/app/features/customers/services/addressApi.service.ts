@@ -5,6 +5,7 @@ import { GetCitiesResponse } from '../models/responses/address/get-cities-respon
 import { Observable } from 'rxjs';
 import { PostAddressRequest } from '../models/requests/address/post-address-request';
 import { PostAddressResponse } from '../models/responses/address/post-address-response';
+import { GetAddressesByCustomerId } from '../models/responses/address/get-address-by-customerId-response';
 
 
 @Injectable({
@@ -21,6 +22,12 @@ export class AddressApiService {
   getCities(): Observable<GetCitiesResponse[]> {
     return this.http.get<GetCitiesResponse[]>('http://localhost:8081/customerservice/api/v1/cities')
   }
+
+   getAddressesByCustomerId(customerId:string):Observable<GetAddressesByCustomerId[]>{
+    return this.http.get<GetAddressesByCustomerId[]>(
+     `http://localhost:8081/api/v1/addresses/customer/${customerId}` 
+    )
+   }
 
 
 }
