@@ -1,6 +1,6 @@
 <div class="menu-bar">
-    <button routerLink="/customerinfo" class="active">Customer Info</button>
-    <button routerLink="/customeraccounts">Customer Accounts</button>
-    <button routerLink="/customeraddress">Address</button>
-    <button routerLink="/customercontactmedium">Contact Medium</button>
-</div>
+    <button (click)="navigate('info')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/info') }">Customer Info</button>
+    <button (click)="navigate('customeraccounts')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/customeraccounts') }">Customer Accounts</button>
+    <button (click)="navigate('customeraddress')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/customeraddress') }">Address</button>
+    <button (click)="navigate('customercontactmedium')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/customercontactmedium') }">Contact Medium</button>
+  </div>

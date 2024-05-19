@@ -11,7 +11,7 @@ export const initialIndividualCustomerAddressState:IndividualCustomerAddressStat
         cityName:'',
         houseFlatNumber: '',
         street: '',
-        addressDescription: ''
+        addressDescription: '',
         // isPrimaryAddress:false
     }
 }
