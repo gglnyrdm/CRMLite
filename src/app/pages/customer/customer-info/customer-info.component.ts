@@ -61,18 +61,22 @@ gender:string;
     }
   }
   deleteCustomerInfo() {
-    // Silme işlemi öncesinde onay iletişim kutusunu aç
+    
     const dialogRef = this.dialog.open(DialogPopupWithButtonsComponent, {
       data: { message: 'Are you sure to delete this customer ?' }
     });
 
     // İletişim kutusu kapatıldığında yapılacak işlemler
     dialogRef.afterClosed().subscribe(result => {
-      // Kullanıcı 'Evet' seçeneğini seçtiyse, müşteriyi sil
       if (result) {
-        // Müşteriyi silme işlemleri
+        this.clickYesButton();
       }
     });
+  }
+
+  clickYesButton(): void {
+    //Kullanıcı aktif ürünü var mı sorgusu yapılacak
+   console.log("yes butonuna basıldı")
   }
     
 }

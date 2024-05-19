@@ -17,7 +17,7 @@
   }
   .button-area{
     position: relative;
-    top: 70%;
+    top: 35%;
     width: 60%;
     font-weight: 400;
     font-size: 1rem;
@@ -31,11 +31,9 @@
       border-radius: 0.7rem;
       border: none;
       position: relative;
-      margin-right: 20rem;
       right: 25%;
     }
     .yes-button {
-      position: inherit;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -45,8 +43,7 @@
       height: 1.9rem;
       border-radius: 0.7rem;
       border: none;
-      margin-left: 18rem;
-      bottom: 16.2%;
+      margin-left: 10rem;
     }
 }
   
