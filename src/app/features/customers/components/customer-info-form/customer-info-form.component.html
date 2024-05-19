@@ -46,7 +46,7 @@
                         </div>
                         <div class="buttons">
                         <button class="cancel-button" (click)="goPrevious()">Cancel</button>
-                        <button  class="save-button" type="submit" [disabled]="form.invalid || form.pristine"   [ngStyle]="{'background-color': !form.valid ? '#E0E0E0' : '#F5822099'}">Save</button>
+                        <button  class="save-button" type="submit" [disabled]="form.invalid"   [ngStyle]="{'background-color': !form.valid ? '#E0E0E0' : '#F5822099'}">Save</button>
                     </div>
                 </div>
             </div>
