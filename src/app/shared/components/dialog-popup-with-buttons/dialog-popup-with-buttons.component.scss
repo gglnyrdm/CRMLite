@@ -1,0 +1,53 @@
+.dialog-container {
+  width: 750px;
+  height: 200px;
+  background-color: white;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 1rem;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; 
+  .message-area{
+    position: relative;
+    top: 30%;
+    left:35%
+  }
+  .button-area{
+    position: relative;
+    top: 70%;
+    width: 60%;
+    font-weight: 400;
+    font-size: 1rem;
+    .no-button{
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background-color: #F9B479;
+      width: 6.25rem;
+      height: 1.9rem;
+      border-radius: 0.7rem;
+      border: none;
+      position: relative;
+      margin-right: 20rem;
+      right: 25%;
+    }
+    .yes-button {
+      position: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background-color: #d9d9d9;
+      width: 6.25rem;
+      height: 1.9rem;
+      border-radius: 0.7rem;
+      border: none;
+      margin-left: 18rem;
+      bottom: 16.2%;
+    }
+}
+  
+}

@@ -2,6 +2,8 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CustomerApiService } from '../../../features/customers/services/customerApi.service';
 import { GetCustomerResponse } from '../../../features/customers/models/responses/customer/get-customer-response';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogPopupWithButtonsComponent } from '../../../shared/components/dialog-popup-with-buttons/dialog-popup-with-buttons.component';
 
 @Component({
   selector: 'app-customer-info',
@@ -20,7 +22,8 @@ gender:string;
   private customerApiService: CustomerApiService,
   private change: ChangeDetectorRef,
   private activatedRoute: ActivatedRoute,
-  private router:Router
+  private router:Router,
+  private dialog: MatDialog
   ){}
 
   ngOnInit(): void {
@@ -57,4 +60,19 @@ gender:string;
       this.gender = 'Male';
     }
   }
+  deleteCustomerInfo() {
+    // Silme işlemi öncesinde onay iletişim kutusunu aç
+    const dialogRef = this.dialog.open(DialogPopupWithButtonsComponent, {
+      data: { message: 'Are you sure to delete this customer ?' }
+    });
+
+    // İletişim kutusu kapatıldığında yapılacak işlemler
+    dialogRef.afterClosed().subscribe(result => {
+      // Kullanıcı 'Evet' seçeneğini seçtiyse, müşteriyi sil
+      if (result) {
+        // Müşteriyi silme işlemleri
+      }
+    });
+  }
+    
 }
