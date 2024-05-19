@@ -24,8 +24,7 @@ export class CustomerInfoFormComponent implements OnInit {
 
   customerId!: string;
   customerInfo!: GetCustomerResponse;
-  form: FormGroup;
-  gender: string;
+  form!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -34,7 +33,9 @@ export class CustomerInfoFormComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private change: ChangeDetectorRef,
     private dialog: MatDialog
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     this.form = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
       lastName: ['', [Validators.required, Validators.minLength(2)]],
@@ -45,9 +46,7 @@ export class CustomerInfoFormComponent implements OnInit {
       fatherName: ['', [Validators.minLength(2)]],
       nationalityIdentity: ['', [Validators.required]]
     });
-  }
 
-  ngOnInit(): void {
     this.activatedRoute.parent?.params.subscribe(params => {
       this.customerId = params['id'];
       console.log('pathID:', this.customerId);
@@ -77,6 +76,12 @@ export class CustomerInfoFormComponent implements OnInit {
         fatherName: this.customerInfo.fatherName,
         nationalityIdentity: this.customerInfo.nationalityIdentity
       });
+      
+      // Change detection'ı manuel olarak tetikleyin
+      this.change.detectChanges();
+  
+      // Formun validasyonunu güncelleyin
+      this.form.updateValueAndValidity();
     }
   }
 
