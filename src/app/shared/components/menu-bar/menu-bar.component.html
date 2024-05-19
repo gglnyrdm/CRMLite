@@ -1,6 +1,6 @@
 <div class="menu-bar">
-    <button (click)="navigate('info')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/info') }">Customer Info</button>
-    <button (click)="navigate('customeraccounts')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/customeraccounts') }">Customer Accounts</button>
-    <button (click)="navigate('customeraddress')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/customeraddress') }">Address</button>
-    <button (click)="navigate('customercontactmedium')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/customercontactmedium') }">Contact Medium</button>
-  </div>
+  <button (click)="navigate('info')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/info') }" [disabled]="isDisabled()">Customer Info</button>
+  <button (click)="navigate('customeraccounts')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/customeraccounts') }" [disabled]="isDisabled()">Customer Accounts</button>
+  <button (click)="navigate('customeraddress')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/customeraddress') }" [disabled]="isDisabled()">Address</button>
+  <button (click)="navigate('customercontactmedium')" [ngClass]="{ 'active': isActive('/customer/' + customerId + '/customercontactmedium') }" [disabled]="isDisabled()">Contact Medium</button>
+</div>

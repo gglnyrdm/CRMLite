@@ -32,4 +32,7 @@ export class MenuBarComponent implements OnInit {
   isActive(url: string): boolean {
     return this.router.url === url;
   }
+  isDisabled(): boolean {
+    return this.router.url.includes('/info-update');
+  }
 }
