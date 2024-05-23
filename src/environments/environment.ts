@@ -1,3 +1,3 @@
-export const environment = {
-    apiUrl: "http://localhost:8081/api/v1"
-  };
+// export const environment = {
+//     customerServiceapiUrl: "http://localhost:8001/customerservice/api/v1"
+//   };

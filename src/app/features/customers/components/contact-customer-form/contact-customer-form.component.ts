@@ -42,7 +42,6 @@ export class ContactCustomerFormComponent {
   showHomePhoneWarning: boolean = false;
   showFaxWarning: boolean = false;
   showEmailWarning: boolean = false;
-
   isFormValid: boolean = false;
 
   formContactMedium: FormGroup;
@@ -76,7 +75,6 @@ export class ContactCustomerFormComponent {
   }
 
   onSubmitForm() {
-    debugger;
     const { mobilePhone, fax, homePhone, email } = this.formContactMedium.value;
   
     this.showMobilePhoneWarning = false;
@@ -104,8 +102,6 @@ export class ContactCustomerFormComponent {
       this.makeRequests();
     }
   }
-  
-  
 
   goPrevious() {
     const contactMedium: PostContactMediumRequest = {

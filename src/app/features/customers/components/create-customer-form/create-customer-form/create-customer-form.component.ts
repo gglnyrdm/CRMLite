@@ -138,7 +138,7 @@ createForm() {
     middleName: ['',[Validators.minLength(2),Validators.maxLength(20)]],
     lastName: ['',[Validators.required,Validators.minLength(2),Validators.maxLength(20)]],
     gender: ['', Validators.required],
-    motherName: ['',[Validators.required,Validators.minLength(2),Validators.maxLength(20)]],
+    motherName: ['',[Validators.minLength(2),Validators.maxLength(20)]],
     fatherName: ['',[Validators.minLength(2),Validators.maxLength(20)]],
     birthDate: ['', Validators.required],
     nationalityIdentity: ['', [Validators.required,Validators.minLength(11)]]
